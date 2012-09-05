@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using WG.Network.Phone.Query;
 
 namespace Songkick.Client.Phone.Contracts
 {
-    interface IEventsClientService
+    public interface IEventsClientService
     {
+        void SearchEvents(long location, Action<EntityWrapper> callBack, string artistName = "", string minDate = "", string maxDate = "");
     }
 }
