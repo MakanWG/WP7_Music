@@ -12,5 +12,8 @@ namespace Songkick.Entities.Phone.Events
 
         [JsonProperty("id")]
         public long ArtistId { get; set; }
+
+        [JsonProperty("onTourUntil")]
+        public string TourEnd { get; set; }
     }
 }

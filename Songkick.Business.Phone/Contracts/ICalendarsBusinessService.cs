@@ -12,12 +12,10 @@ using WG.Network.Phone.Query;
 
 namespace Songkick.Business.Phone.Contracts
 {
-    public interface IEventsBusinessService
+    public interface ICalendarsBusinessService
     {
-        void SearchEvents(long location, Action<EntityWrapper> callBack, string artistName = "", string minDate = "", string maxDate = "");
+        void GetTrackedArtistsCalendar(string username, Action<EntityWrapper> callback);
 
-        void GetAttendedEvents(string username, Action<EntityWrapper> callback);
-
-        void GetUserPastEvents(string username, Action<EntityWrapper> callback);
+        void GetAttendedCalendar(string username, Action<EntityWrapper> callback);
     }
 }

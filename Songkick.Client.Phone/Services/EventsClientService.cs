@@ -33,5 +33,33 @@ namespace Songkick.Client.Phone.Services
             }
             QueryHandler.ExecuteQuery(RequestObject);
         }
+
+        public void GetAttendedEvents(string username, Action<EntityWrapper> callback)
+        {
+            RequestObject requestObject = new RequestObject();
+            requestObject
+                .SetUri(Constants.Uri)
+                .AppendPath("users")
+                .AppendPath(username)
+                .AppendPath("events.json")
+                .Param("apikey", Constants.APIKey)
+                .SetCallBack(callback)
+                .ToResponseEntity(typeof(ResultsPage));
+            QueryHandler.ExecuteQuery(requestObject);
+        }
+
+        public void GetUserPastEvents(string username, Action<EntityWrapper> callback)
+        {
+            RequestObject requestObject = new RequestObject();
+            requestObject
+                .SetUri(Constants.Uri)
+                .AppendPath("users")
+                .AppendPath(username)
+                .AppendPath("gigography.json")
+                .Param("apikey", Constants.APIKey)
+                .SetCallBack(callback)
+                .ToResponseEntity(typeof(ResultsPage));
+            QueryHandler.ExecuteQuery(requestObject);
+        }
     }
 }

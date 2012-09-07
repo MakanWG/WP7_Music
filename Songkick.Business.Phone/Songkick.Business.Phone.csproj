@@ -56,11 +56,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IArtistsBusinessService.cs" />
+    <Compile Include="Contracts\ICalendarsBusinessService.cs" />
     <Compile Include="Contracts\IEventsBusinessService.cs" />
     <Compile Include="Contracts\ILocationsBusinessService.cs" />
     <Compile Include="Contracts\IVenuesBusinessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ArtistsBusinessService.cs" />
+    <Compile Include="Services\CalendarsBusinessService.cs" />
     <Compile Include="Services\EventsBusinessService.cs.cs" />
     <Compile Include="Services\LocationsBusinessService.cs" />
     <Compile Include="Services\VenuesBusinessService.cs" />

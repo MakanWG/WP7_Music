@@ -57,11 +57,13 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Contracts\IArtistsClientService.cs" />
+    <Compile Include="Contracts\ICalendarsClientService.cs" />
     <Compile Include="Contracts\IEventsClientService.cs" />
     <Compile Include="Contracts\ILocationsClientService.cs" />
     <Compile Include="Contracts\IVenuesClientService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ArtistsClientService.cs" />
+    <Compile Include="Services\CalendarsClientService.cs" />
     <Compile Include="Services\EventsClientService.cs" />
     <Compile Include="Services\LocationsClientService.cs" />
     <Compile Include="Services\VenuesClientService.cs" />

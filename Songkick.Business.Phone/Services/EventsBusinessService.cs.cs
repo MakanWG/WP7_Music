@@ -27,5 +27,15 @@ namespace Songkick.Business.Phone.Services
         {
             EventsClientService.SearchEvents(location, callBack, artistName = "", minDate = "", maxDate = "");
         }
+
+        public void GetAttendedEvents(string username, Action<EntityWrapper> callback)
+        {
+            EventsClientService.GetAttendedEvents(username, callback);
+        }
+
+        public void GetUserPastEvents(string username, Action<EntityWrapper> callback)
+        {
+            EventsClientService.GetUserPastEvents(username, callback);
+        }
     }
 }

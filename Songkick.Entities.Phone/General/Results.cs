@@ -11,5 +11,8 @@ namespace Songkick.Entities.Phone.General
 
         [JsonProperty("venue")]
         public Venues.Venue Venue { get; set; }
+
+        [JsonProperty("calendarEntry")]
+        public IEnumerable<CalendarEntry> CalendarEntries { get; set; }
     }
 }
