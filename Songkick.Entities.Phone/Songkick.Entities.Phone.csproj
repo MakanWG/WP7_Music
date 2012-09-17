@@ -51,7 +51,7 @@
     <Reference Include="System.Net" />
     <Reference Include="mscorlib.extensions" />
     <Reference Include="WG.Network.Phone">
-      <HintPath>..\..\WG\Libs\WG.Network.Phone.dll</HintPath>
+      <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Network.Phone.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

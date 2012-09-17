@@ -12,30 +12,31 @@ using Songkick.Business.Phone.Contracts;
 using Songkick.Client.Phone.Contracts;
 using Songkick.Client.Phone.Services;
 using WG.Network.Phone.Query;
+using Songkick.Entities.Phone.General;
 
 namespace Songkick.Business.Phone.Services
 {
     public class EventsBusinessService : IEventsBusinessService
     {
-        public IEventsClientService EventsClientService { get; set; }
-        public EventsBusinessService()
+        private IEventsClientService _eventsClientService;
+        public EventsBusinessService(IEventsClientService eventsClientService)
         {
-            EventsClientService = new EventsClientService();
+            _eventsClientService = eventsClientService;
         }
 
-        public void SearchEvents(long location, Action<EntityWrapper> callBack, string artistName = "", string minDate = "", string maxDate = "")
+        public ResultsPage SearchEvents(long location, string artistName = "", string minDate = "", string maxDate = "")
         {
-            EventsClientService.SearchEvents(location, callBack, artistName = "", minDate = "", maxDate = "");
+            return _eventsClientService.SearchEvents(location, artistName = "", minDate = "", maxDate = "");
         }
 
-        public void GetAttendedEvents(string username, Action<EntityWrapper> callback)
+        public ResultsPage GetAttendedEvents(string username)
         {
-            EventsClientService.GetAttendedEvents(username, callback);
+            return _eventsClientService.GetAttendedEvents(username);
         }
 
-        public void GetUserPastEvents(string username, Action<EntityWrapper> callback)
+        public ResultsPage GetUserPastEvents(string username)
         {
-            EventsClientService.GetUserPastEvents(username, callback);
+            return _eventsClientService.GetUserPastEvents(username);
         }
     }
 }

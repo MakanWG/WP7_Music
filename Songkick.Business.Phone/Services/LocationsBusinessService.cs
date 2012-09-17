@@ -12,25 +12,26 @@ using Songkick.Business.Phone.Contracts;
 using WG.Network.Phone.Query;
 using Songkick.Client.Phone.Contracts;
 using Songkick.Client.Phone.Services;
+using Songkick.Entities.Phone.General;
 
 namespace Songkick.Business.Phone.Services
 {
     public class LocationsBusinessService : ILocationsBusinessService
     {
-        public ILocationsClientService LocationsClientService { get; set; }
-        public LocationsBusinessService()
+        private ILocationsClientService _locationsClientService;
+        public LocationsBusinessService(ILocationsClientService locationClientService)
         {
-            LocationsClientService = new LocationsClientService();
+            _locationsClientService = locationClientService;
         }
 
-        public void SearchLocations(string artist, Action<EntityWrapper> callback)
+        public ResultsPage SearchLocations(string artist)
         {
-            LocationsClientService.SearchLocations(artist, callback);
+            return _locationsClientService.SearchLocations(artist);
         }
 
-        public void GetLocationCalendar(string locationId, Action<EntityWrapper> callback)
+        public ResultsPage GetLocationCalendar(string locationId)
         {
-            LocationsClientService.GetLocationCalendar(locationId, callback);
+            return _locationsClientService.GetLocationCalendar(locationId);
         }
     }
 }

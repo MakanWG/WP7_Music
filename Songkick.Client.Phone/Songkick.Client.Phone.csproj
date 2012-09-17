@@ -48,10 +48,13 @@
     <Reference Include="System.Net" />
     <Reference Include="mscorlib.extensions" />
     <Reference Include="WG.Extensions.Phone">
-      <HintPath>..\..\WG\Libs\WG.Extensions.Phone.dll</HintPath>
+      <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Extensions.Phone.dll</HintPath>
     </Reference>
     <Reference Include="WG.Network.Phone">
-      <HintPath>..\..\WG\Libs\WG.Network.Phone.dll</HintPath>
+      <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Network.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsPhoneTuple">
+      <HintPath>..\packages\WindowsPhoneTuple.1.0.2\lib\sl4-wp71\WindowsPhoneTuple.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +76,9 @@
       <Project>{53171118-54CC-4655-B03F-51A68AE2D431}</Project>
       <Name>Songkick.Entities.Phone</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

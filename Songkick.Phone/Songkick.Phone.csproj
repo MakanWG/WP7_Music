@@ -56,6 +56,15 @@
     <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="WG.Presentation.Phone">
+      <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Presentation.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="WG.Views.Phone">
+      <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Views.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsPhoneTuple">
+      <HintPath>..\packages\WindowsPhoneTuple.1.0.2\lib\sl4-wp71\WindowsPhoneTuple.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -70,6 +79,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
@@ -83,6 +93,10 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Songkick.Presentation.Phone\Songkick.Presentation.Phone.csproj">
+      <Project>{74EEC9C5-D864-4585-A8AB-1FEC8AA2B7E4}</Project>
+      <Name>Songkick.Presentation.Phone</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Songkick.Views.Phone\Songkick.Views.Phone.csproj">
       <Project>{CF8AA29C-B0E4-4708-8086-EF85668B0338}</Project>
       <Name>Songkick.Views.Phone</Name>

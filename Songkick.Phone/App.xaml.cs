@@ -12,6 +12,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Songkick.Presentation.Phone;
+using WG.Views.Phone;
+using Songkick.Presentation.Phone.MainPage;
+using Songkick.Views.Phone;
 
 namespace Songkick.Phone
 {
@@ -56,7 +60,7 @@ namespace Songkick.Phone
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
-
+            Initializer.InitializeInjection();
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -121,7 +125,6 @@ namespace Songkick.Phone
 
             // Handle navigation failures
             RootFrame.NavigationFailed += RootFrame_NavigationFailed;
-
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
         }

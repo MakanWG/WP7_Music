@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Songkick.Presentation.Phone.MainPage;
+using Songkick.Presentation.Phone;
 
 namespace Songkick.Views.Phone.MainPage
 {
@@ -18,6 +20,15 @@ namespace Songkick.Views.Phone.MainPage
         public MainPage()
         {
             InitializeComponent();
+
+        }
+
+        private void test(object sender, RoutedEventArgs e)
+        {
+            Initializer.SetApp(Application.Current);
+            EmptyViewModel model = new EmptyViewModel();
+            this.DataContext = model;
+            model.SetPage();
         }
     }
 }

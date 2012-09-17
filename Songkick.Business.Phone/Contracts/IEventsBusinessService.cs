@@ -9,15 +9,16 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using WG.Network.Phone.Query;
+using Songkick.Entities.Phone.General;
 
 namespace Songkick.Business.Phone.Contracts
 {
     public interface IEventsBusinessService
     {
-        void SearchEvents(long location, Action<EntityWrapper> callBack, string artistName = "", string minDate = "", string maxDate = "");
+        ResultsPage SearchEvents(long location, string artistName = "", string minDate = "", string maxDate = "");
 
-        void GetAttendedEvents(string username, Action<EntityWrapper> callback);
+        ResultsPage GetAttendedEvents(string username);
 
-        void GetUserPastEvents(string username, Action<EntityWrapper> callback);
+        ResultsPage GetUserPastEvents(string username);
     }
 }

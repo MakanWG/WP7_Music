@@ -8,15 +8,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using WG.Network.Phone.Query;
-using Songkick.Entities.Phone.General;
 
-namespace Songkick.Business.Phone.Contracts
+namespace Songkick.Presentation.Phone
 {
-    public interface IVenuesBusinessService
+    public enum ApplicationPages
     {
-        ResultsPage SearchVenue(string venue);
-
-        ResultsPage GetVenueCalendar(string venueId);
+        Default = 0,
+        Main,
+        Test
     }
 }

@@ -72,6 +72,10 @@
       <Project>{69B28B36-E203-444B-91BC-5E0DBD46718C}</Project>
       <Name>Songkick.Client.Phone</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Songkick.Entities.Phone\Songkick.Entities.Phone.csproj">
+      <Project>{53171118-54CC-4655-B03F-51A68AE2D431}</Project>
+      <Name>Songkick.Entities.Phone</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

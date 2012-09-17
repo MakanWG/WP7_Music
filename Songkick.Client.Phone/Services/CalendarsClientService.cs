@@ -8,10 +8,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using WG.Network.Phone.Query;
-using WG.Extensions.Phone.Query;
 using Songkick.Entities.Phone.General;
 using Songkick.Client.Phone.Contracts;
+using WG.Extensions.Phone.Query;
+using WG.Network.Phone.Query;
 
 namespace Songkick.Client.Phone.Services
 {
@@ -21,34 +21,31 @@ namespace Songkick.Client.Phone.Services
         {
 
         }
-        public void GetTrackedArtistsCalendar(string username, Action<EntityWrapper> callback)
+        public ResultsPage GetTrackedArtistsCalendar(string username)
         {
-            RequestObject requestObject = new RequestObject();
-            requestObject
+           RequestObject requestObject = new RequestObject();
+           return (ResultsPage)requestObject
+               .Get()
                 .SetUri(Constants.Uri)
                 .AppendPath("users")
                 .AppendPath(username)
                 .AppendPath("calendar.json")
                 .Param("reason", "tracked_artist")
                 .Param("apikey", Constants.APIKey)
-                .SetCallBack(callback)
                 .ToResponseEntity(typeof(ResultsPage));
-            QueryHandler.ExecuteQuery(requestObject);
         }
 
-        public void GetAttendedCalendar(string username, Action<EntityWrapper> callback)
+        public ResultsPage GetAttendedCalendar(string username)
         {
             RequestObject requestObject = new RequestObject();
-            requestObject
+            return (ResultsPage)requestObject
                 .SetUri(Constants.Uri)
                 .AppendPath("users")
                 .AppendPath(username)
                 .AppendPath("calendar.json")
                 .Param("reason", "attendance")
                 .Param("apikey", Constants.APIKey)
-                .SetCallBack(callback)
                 .ToResponseEntity(typeof(ResultsPage));
-            QueryHandler.ExecuteQuery(requestObject);
         }
     }
 }

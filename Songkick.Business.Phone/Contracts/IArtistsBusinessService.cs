@@ -9,13 +9,14 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using WG.Network.Phone.Query;
+using Songkick.Entities.Phone.General;
 
 namespace Songkick.Business.Phone.Contracts
 {
     public interface IArtistsBusinessService
     {
-        void SearchArtist(string artist, Action<EntityWrapper> callback);
+        ResultsPage SearchArtist(string artist);
 
-        void GetArtistCalendar(string artistId, Action<EntityWrapper> callback);
+        ResultsPage GetArtistCalendar(string artistId);
     }
 }

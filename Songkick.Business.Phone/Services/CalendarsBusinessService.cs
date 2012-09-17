@@ -12,25 +12,27 @@ using Songkick.Business.Phone.Contracts;
 using WG.Network.Phone.Query;
 using Songkick.Client.Phone.Contracts;
 using Songkick.Client.Phone.Services;
+using Songkick.Entities.Phone.General;
 
 namespace Songkick.Business.Phone.Services
 {
     public class CalendarsBusinessService : ICalendarsBusinessService
     {
-        public ICalendarsClientService CalendarsClientService { get; set; }
+        private ICalendarsClientService _calendarsClientService;
 
-        public CalendarsBusinessService()
+        public CalendarsBusinessService(ICalendarsClientService calendarClientService)
         {
-            CalendarsClientService = new CalendarsClientService();
-        }
-        public void GetTrackedArtistsCalendar(string username, Action<EntityWrapper> callback)
-        {
-            CalendarsClientService.GetTrackedArtistsCalendar(username, callback);
+            _calendarsClientService = calendarClientService;
         }
 
-        public void GetAttendedCalendar(string username, Action<EntityWrapper> callback)
+        public ResultsPage GetTrackedArtistsCalendar(string username)
         {
-            CalendarsClientService.GetAttendedCalendar(username, callback);
+           return _calendarsClientService.GetTrackedArtistsCalendar(username);
+        }
+
+        public ResultsPage GetAttendedCalendar(string username)
+        {
+            return _calendarsClientService.GetAttendedCalendar(username);
         }
     }
 }

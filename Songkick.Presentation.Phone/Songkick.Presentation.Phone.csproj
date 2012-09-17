@@ -41,15 +41,57 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Reactive" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.Silverlight.1.0\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\sl4-windowsphone71\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Observable" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="WG.Network.Phone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="WG.Presentation.Phone">
+      <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Presentation.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="WG.Views.Phone">
+      <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Views.Phone.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationPages.cs" />
+    <Compile Include="Initializer.cs" />
+    <Compile Include="MainPage\EmptyViewModel.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="NavigationControllerExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesLocators\BusinessServicesLocator.cs" />
+    <Compile Include="ServicesLocators\ClientServicesLocator.cs" />
+    <Compile Include="ServicesLocators\ServicesLocator.cs" />
+    <Compile Include="ViewModelExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Songkick.Business.Phone\Songkick.Business.Phone.csproj">
+      <Project>{001DA2F5-CD54-4432-842D-9C0C8D825096}</Project>
+      <Name>Songkick.Business.Phone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Songkick.Client.Phone\Songkick.Client.Phone.csproj">
+      <Project>{69B28B36-E203-444B-91BC-5E0DBD46718C}</Project>
+      <Name>Songkick.Client.Phone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Songkick.Entities.Phone\Songkick.Entities.Phone.csproj">
+      <Project>{53171118-54CC-4655-B03F-51A68AE2D431}</Project>
+      <Name>Songkick.Entities.Phone</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

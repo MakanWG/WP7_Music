@@ -1,12 +1,13 @@
 ﻿using System;
 using WG.Network.Phone.Query;
+using Songkick.Entities.Phone.General;
 
 namespace Songkick.Client.Phone.Contracts
 {
     public interface IVenuesClientService
     {
-        void SearchVenue(string venue, Action<EntityWrapper> callback);
+        ResultsPage SearchVenue(string venue);
 
-        void GetVenueCalendar(string venueId, Action<EntityWrapper> callback);
+        ResultsPage GetVenueCalendar(string venueId);
     }
 }

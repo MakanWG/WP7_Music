@@ -14,5 +14,14 @@ namespace Songkick.Entities.Phone.General
 
         [JsonProperty("calendarEntry")]
         public IEnumerable<CalendarEntry> CalendarEntries { get; set; }
+
+        [JsonProperty("page")]
+        public int Page { get; set; }
+
+        [JsonProperty("totalEntries")]
+        public int TotalEntries { get; set; }
+
+        [JsonProperty("status")]
+        public string Status { get; set; }
     }
 }

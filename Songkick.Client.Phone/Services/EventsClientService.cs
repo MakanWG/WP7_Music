@@ -14,10 +14,14 @@ namespace Songkick.Client.Phone.Services
 
         }
 
-        public void SearchEvents(long location , Action<EntityWrapper> callBack, string artistName = "", string minDate = "", string maxDate ="")
+        public ResultsPage SearchEvents(long location, string artistName = "", string minDate = "", string maxDate = "")
         {
-            RequestObject RequestObject = new RequestObject();
-            RequestObject
+            RequestObject requestObject = new RequestObject();
+            if (location != 0)
+            {
+                requestObject.Param("location", location.ToString(CultureInfo.InvariantCulture));
+            }
+            return (ResultsPage)requestObject
                 .SetUri(Constants.Uri)
                 .AppendPath("events.json")
                 .Get()
@@ -25,41 +29,32 @@ namespace Songkick.Client.Phone.Services
                 .Param("artist_name", artistName)
                 .Param("min_date", minDate)
                 .Param("max_date", maxDate)
-                .SetCallBack(callBack)
                 .ToResponseEntity(typeof(ResultsPage));
-            if (location != 0)
-            {
-                RequestObject.Param("location", location.ToString(CultureInfo.InvariantCulture));
-            }
-            QueryHandler.ExecuteQuery(RequestObject);
+
         }
 
-        public void GetAttendedEvents(string username, Action<EntityWrapper> callback)
+        public ResultsPage GetAttendedEvents(string username)
         {
             RequestObject requestObject = new RequestObject();
-            requestObject
+            return (ResultsPage)requestObject
                 .SetUri(Constants.Uri)
                 .AppendPath("users")
                 .AppendPath(username)
                 .AppendPath("events.json")
                 .Param("apikey", Constants.APIKey)
-                .SetCallBack(callback)
                 .ToResponseEntity(typeof(ResultsPage));
-            QueryHandler.ExecuteQuery(requestObject);
         }
 
-        public void GetUserPastEvents(string username, Action<EntityWrapper> callback)
+        public ResultsPage GetUserPastEvents(string username)
         {
             RequestObject requestObject = new RequestObject();
-            requestObject
+            return (ResultsPage)requestObject
                 .SetUri(Constants.Uri)
                 .AppendPath("users")
                 .AppendPath(username)
                 .AppendPath("gigography.json")
                 .Param("apikey", Constants.APIKey)
-                .SetCallBack(callback)
                 .ToResponseEntity(typeof(ResultsPage));
-            QueryHandler.ExecuteQuery(requestObject);
         }
     }
 }
