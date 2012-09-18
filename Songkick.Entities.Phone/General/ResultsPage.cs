@@ -3,7 +3,7 @@ using WG.Network.Phone.Query;
 
 namespace Songkick.Entities.Phone.General
 {
-    public class ResultsPage : EntityWrapper
+    public class ResultsPage 
     {
         [JsonProperty("page")]
         public int Page { get; set; }

@@ -8,13 +8,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using WG.Network.Phone.Query;
+using Newtonsoft.Json;
 
-namespace Songkick.Presentation.Phone
+namespace Songkick.Entities.Phone.General
 {
-    public enum ApplicationPages
+    public class Response
     {
-        Default = 0,
-        Main,
-        Home,
+        [JsonProperty("resultsPage")]
+        public ResultsPage ResultsPage { get; set; }
     }
 }

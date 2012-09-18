@@ -25,7 +25,7 @@ namespace Songkick.Business.Phone.Services
             _calendarsClientService = calendarClientService;
         }
 
-        public ResultsPage GetTrackedArtistsCalendar(string username)
+        public Response GetTrackedArtistsCalendar(string username)
         {
            return _calendarsClientService.GetTrackedArtistsCalendar(username);
         }

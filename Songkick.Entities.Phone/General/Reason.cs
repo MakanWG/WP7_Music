@@ -19,6 +19,6 @@ namespace Songkick.Entities.Phone.General
         public string Attendance { get; set; }
 
         [JsonProperty("trackedArtist")]
-        public Artist TrackedArtist { get; set; }
+        public Artist[] TrackedArtist { get; set; }
     }
 }

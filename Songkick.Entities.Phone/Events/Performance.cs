@@ -5,8 +5,8 @@ namespace Songkick.Entities.Phone.Events
 {
     public class Performance
     {
-        [JsonProperty("artist")]
-        public IEnumerable<Artist> Artists { get; set; }
+       /* [JsonProperty("artist")]
+        public Artist[] Artists { get; set; }*/
 
         [JsonProperty("displayName")]
         public string DisplayName { get; set; }

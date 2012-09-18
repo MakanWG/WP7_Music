@@ -1,20 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Songkick.Presentation.Phone
+namespace Songkick.Views.Phone.Home.UserControls
 {
-    public enum ApplicationPages
+    public partial class TrackingControl : UserControl
     {
-        Default = 0,
-        Main,
-        Home,
+        public TrackingControl()
+        {
+            InitializeComponent();
+        }
     }
 }

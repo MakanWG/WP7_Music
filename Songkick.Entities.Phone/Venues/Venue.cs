@@ -28,11 +28,11 @@ namespace Songkick.Entities.Phone.Venues
         [JsonProperty("zip")]
         public string Zip { get; set; }
 
-        [JsonProperty("lat")]
-        public long Latitude { get; set; }
+        //[JsonProperty("lat")]
+        //public long Latitude { get; set; }
 
-        [JsonProperty("lng")]
-        public long Longitude { get; set; }
+       /* [JsonProperty("lng")]
+        public long Longitude { get; set; }*/
 
         [JsonProperty("phone")]
         public string Phone { get; set; }

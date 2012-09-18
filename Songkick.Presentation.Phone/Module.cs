@@ -7,6 +7,7 @@ using Songkick.Presentation.Phone.ServicesLocators;
 using WG.Views.Phone;
 using Songkick.Presentation.Phone.MainPage;
 using System.Collections;
+using Songkick.Presentation.Phone.Home;
 
 namespace Songkick.Presentation.Phone
 {
@@ -50,9 +51,9 @@ namespace Songkick.Presentation.Phone
                },
                new PageDeclaration
                {
-                   ApplicationPage = ApplicationPages.Test,
-                   Uri = "/Test/TestPage.xaml",
-                   ViewModel = new EmptyViewModel()
+                   ApplicationPage = ApplicationPages.Home,
+                   Uri = "/Home/HomePanorama.xaml",
+                   ViewModel = new HomePanoramaViewModel()
                },
            };
         }

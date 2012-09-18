@@ -63,6 +63,7 @@
     <Compile Include="Events\Venue.cs" />
     <Compile Include="General\CalendarEntry.cs" />
     <Compile Include="General\Reason.cs" />
+    <Compile Include="General\Response.cs" />
     <Compile Include="General\Results.cs" />
     <Compile Include="General\ResultsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -32,6 +32,11 @@ namespace Songkick.Presentation.Phone
             controller.NavigateTo(String.Format("{0}{1}",ViewsAssembly,CurrentPage.Uri), currentRoot, SetViewModel);  
         }
 
+        public static void NavigateToHome(this NavigationController controller, ApplicationPages Page)
+        {
+            NavigateTo(controller, ApplicationPages.Home);
+        }
+
         public static void SetViewModel(PhoneApplicationPage root)
         {
             root.DataContext = CurrentPage.ViewModel;

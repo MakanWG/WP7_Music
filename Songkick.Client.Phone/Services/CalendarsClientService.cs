@@ -21,10 +21,10 @@ namespace Songkick.Client.Phone.Services
         {
 
         }
-        public ResultsPage GetTrackedArtistsCalendar(string username)
+        public Response GetTrackedArtistsCalendar(string username)
         {
            RequestObject requestObject = new RequestObject();
-           return (ResultsPage)requestObject
+           return (Response)requestObject
                .Get()
                 .SetUri(Constants.Uri)
                 .AppendPath("users")
@@ -32,7 +32,7 @@ namespace Songkick.Client.Phone.Services
                 .AppendPath("calendar.json")
                 .Param("reason", "tracked_artist")
                 .Param("apikey", Constants.APIKey)
-                .ToResponseEntity(typeof(ResultsPage));
+                .ToResponseEntity(typeof(Response));
         }
 
         public ResultsPage GetAttendedCalendar(string username)

@@ -20,7 +20,6 @@ namespace Songkick.Views.Phone.MainPage
         public MainPage()
         {
             InitializeComponent();
-
         }
 
         private void test(object sender, RoutedEventArgs e)

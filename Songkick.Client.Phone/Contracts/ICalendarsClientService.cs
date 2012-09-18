@@ -15,7 +15,7 @@ namespace Songkick.Client.Phone.Contracts
 {
     public interface ICalendarsClientService
     {
-        ResultsPage GetTrackedArtistsCalendar(string username);
+        Response GetTrackedArtistsCalendar(string username);
 
         ResultsPage GetAttendedCalendar(string username);
     }

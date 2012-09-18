@@ -17,24 +17,22 @@ namespace Songkick.Presentation.Phone.MainPage
 {
     public class EmptyViewModel : ViewModelBase
     {
-        public ResultsPage ResultPage
+        public Response ResultPage
         {
-            get { return GetValue<ResultsPage>("ResultPage", null); }
-            set { SetValue("ResultPage", value); }
+            get { return new Response(); }
+            set { var a = value; }
         }
         public EmptyViewModel()
             :base()
         {   
-            ResultPage = new ResultsPage();
         }
 
         public void SetPage()
         {       
-                var Result = new ResultsPage();
-                this.ExecuteAsync(func => Result =
-                    this.BusinessServices().Calendar.GetTrackedArtistsCalendar("DavidMelo"));
-                ResultPage = Result;
-                this.Services().Navigation.NavigateTo(ApplicationPages.Test);
+                //var Result = new Response();
+                //this.ExecuteAsync(func => ResultPage  =
+                //    this.BusinessServices().Calendar.GetTrackedArtistsCalendar("DavidMelo"));
+            this.Services().Navigation.NavigateTo(ApplicationPages.Home);
         }
     }
 }
