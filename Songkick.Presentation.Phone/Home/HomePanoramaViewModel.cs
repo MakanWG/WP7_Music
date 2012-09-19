@@ -10,20 +10,19 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using WG.Presentation.Phone.ViewModels;
 using Songkick.Presentation.Phone.Home.Controls;
+using System.Collections.ObjectModel;
+using Songkick.Entities.Phone.General;
 
 namespace Songkick.Presentation.Phone.Home
 {
     public class HomePanoramaViewModel : ViewModelBase
     {
-        public TrackingControlViewModel TrackingControlViewModel
-        {
-            get { return GetValue<TrackingControlViewModel>("TrackingControlViewModel", null); }
-            set { SetValue<TrackingControlViewModel>("TrackingControlViewModel", value); }
-        }
+        public TrackingControlViewModel TrackingControlViewModel { get; set; }
         
         public HomePanoramaViewModel()
             :base()
         {
+            TrackingControlViewModel = new TrackingControlViewModel();
         }
     }
 }

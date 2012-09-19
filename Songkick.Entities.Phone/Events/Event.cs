@@ -24,7 +24,7 @@ namespace Songkick.Entities.Phone.Events
         public EventStart EventStart { get; set; }
 
         [JsonProperty("performance")]
-        public Performance[] Performance { get; set; }
+        public List<Performance> Performance { get; set; }
 
         [JsonProperty("id")]
         public long EventId { get; set; }

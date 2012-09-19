@@ -11,16 +11,20 @@ using System.Windows.Shapes;
 using WG.Presentation.Phone.ViewModels;
 using Songkick.Entities.Phone.General;
 using System.Threading;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Songkick.Presentation.Phone.Home.Controls
 {
     public class TrackingControlViewModel : ViewModelBase
     {
-        public Response Response
+        public ObservableCollection<CalendarEntry> CalendarEntries
         {
-            get { return GetValue<Response>("Response", null); }
-            set { SetValue<Response>("Response", value); }
+            get { return GetValue<ObservableCollection<CalendarEntry>>("CalendarEntries", null); }
+            set { SetValue<ObservableCollection<CalendarEntry>>("CalendarEntries", value); }
         }
+
+
         public TrackingControlViewModel()
             :base()
         {
@@ -29,9 +33,8 @@ namespace Songkick.Presentation.Phone.Home.Controls
 
         public void GetTrackings()
         {
-            var Result = new Response();
-            this.ExecuteAsync(func => Response =
-                this.BusinessServices().Calendar.GetTrackedArtistsCalendar("DavidMelo"), Result);
+            this.ExecuteAsync(func => CalendarEntries =
+                this.BusinessServices().Calendar.GetTrackedArtistsCalendar("DavidMelo"));
         }
     }
 }

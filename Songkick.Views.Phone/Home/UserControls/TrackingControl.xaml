@@ -9,7 +9,14 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480">
     
-    <Grid x:Name="LayoutRoot">
-
+    <Grid x:Name="LayoutRoot" Margin="{StaticResource DefaultMargin}">
+        <TextBlock Text="{Binding David}"/>
+        <ListBox ItemsSource="{Binding CalendarEntries}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Event.Performance[0].DisplayName}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

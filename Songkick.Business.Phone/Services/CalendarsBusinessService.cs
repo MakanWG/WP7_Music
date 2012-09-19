@@ -13,6 +13,8 @@ using WG.Network.Phone.Query;
 using Songkick.Client.Phone.Contracts;
 using Songkick.Client.Phone.Services;
 using Songkick.Entities.Phone.General;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Songkick.Business.Phone.Services
 {
@@ -25,9 +27,9 @@ namespace Songkick.Business.Phone.Services
             _calendarsClientService = calendarClientService;
         }
 
-        public Response GetTrackedArtistsCalendar(string username)
+        public ObservableCollection<CalendarEntry> GetTrackedArtistsCalendar(string username)
         {
-           return _calendarsClientService.GetTrackedArtistsCalendar(username);
+           return _calendarsClientService.GetTrackedArtistsCalendar(username).ResultsPage.Results.CalendarEntries;
         }
 
         public ResultsPage GetAttendedCalendar(string username)

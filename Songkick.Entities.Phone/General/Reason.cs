@@ -10,6 +10,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
 using Songkick.Entities.Phone.Events;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Songkick.Entities.Phone.General
 {
@@ -19,6 +21,6 @@ namespace Songkick.Entities.Phone.General
         public string Attendance { get; set; }
 
         [JsonProperty("trackedArtist")]
-        public Artist[] TrackedArtist { get; set; }
+        public ObservableCollection<Artist> TrackedArtist { get; set; }
     }
 }
