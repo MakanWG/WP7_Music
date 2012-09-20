@@ -6,8 +6,8 @@
     xmlns:wgcontrols="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone">
 
     <DataTemplate x:Key="CalendarItemTemplate">
-        <wgcontrols:WGButton Margin="{StaticResource DefaultVerticalSpacing}">
-            <Grid>
+        <wgcontrols:WGButton Margin="{StaticResource DefaultVerticalSpacing}" HorizontalAlignment="Left">
+            <Grid HorizontalAlignment="Left">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
@@ -16,7 +16,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Rectangle Height="87" Width="87" Fill="LightSeaGreen" Grid.RowSpan="2"/>
+                <Rectangle HorizontalAlignment="Left" Height="87" Width="87" Fill="LightSeaGreen" Grid.RowSpan="2"/>
                 <TextBlock Text="{Binding Event.Performance[0].DisplayName}" Grid.Column="1" TextTrimming="WordEllipsis"/>
                 <TextBlock Text="{Binding Event.FullVenueName}" Grid.Row="1" Grid.Column="1" TextTrimming="WordEllipsis"/>
             </Grid>
