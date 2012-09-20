@@ -3,20 +3,22 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wgcontrols="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    d:DesignHeight="480" d:DesignWidth="480">
-    
-    <Grid x:Name="LayoutRoot" Margin="{StaticResource DefaultMargin}">
-        <TextBlock Text="{Binding David}"/>
-        <ListBox ItemsSource="{Binding CalendarEntries}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Event.Performance[0].DisplayName}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+    d:DesignHeight="480" d:DesignWidth="480"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+    <Grid Margin="{StaticResource DefaultMargin}">
+        <toolkit:LongListSelector 
+            x:Name="TrackingList"
+            VirtualizingStackPanel.VirtualizationMode="Recycling"
+            ItemsSource="{Binding CalendarEntries}"
+            ItemTemplate="{StaticResource CalendarItemTemplate}"
+            GroupHeaderTemplate="{StaticResource CalendarHeaderTemplate}"
+            GroupItemTemplate="{StaticResource CalendarJumpTemplate}"/>
     </Grid>
 </UserControl>

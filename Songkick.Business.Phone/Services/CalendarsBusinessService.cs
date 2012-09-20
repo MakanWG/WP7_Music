@@ -15,6 +15,8 @@ using Songkick.Client.Phone.Services;
 using Songkick.Entities.Phone.General;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using WG.Tools.Phone.Helpers;
 
 namespace Songkick.Business.Phone.Services
 {
@@ -27,14 +29,33 @@ namespace Songkick.Business.Phone.Services
             _calendarsClientService = calendarClientService;
         }
 
-        public ObservableCollection<CalendarEntry> GetTrackedArtistsCalendar(string username)
+        public ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>> GetTrackedArtistsCalendar(string username)
         {
-           return _calendarsClientService.GetTrackedArtistsCalendar(username).ResultsPage.Results.CalendarEntries;
+            var a =  _calendarsClientService
+                .GetTrackedArtistsCalendar(username)
+                .ResultsPage
+                .Results
+                .CalendarEntries
+                .GroupBy(entry =>
+                    entry.Event.DateOffset)
+                .Select(group => group = new WGGrouping<DateTimeOffset, CalendarEntry>(group));
+            var b = from objects in a select new WGGrouping<DateTimeOffset, CalendarEntry>(objects);
+            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>>(b);        
         }
 
-        public ResultsPage GetAttendedCalendar(string username)
+        public ObservableCollection<WGGrouping<DateTimeOffset,CalendarEntry>> GetAttendedCalendar(string username)
         {
-            return _calendarsClientService.GetAttendedCalendar(username);
+            var a = _calendarsClientService
+                .GetAttendedCalendar(username)
+                .ResultsPage
+                .Results
+                .CalendarEntries
+                .GroupBy(entry => 
+                    entry.Event.DateOffset);
+            var b = from objects in a select new WGGrouping<DateTimeOffset, CalendarEntry>(objects);
+
+            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>>(b);
+                
         }
     }
 }

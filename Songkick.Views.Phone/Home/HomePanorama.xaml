@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:custom="clr-namespace:Phone7.Fx.Preview;assembly=Phone7.Fx.Preview"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -14,29 +15,23 @@
     mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
     shell:SystemTray.IsVisible="True">
 
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid Margin="{StaticResource DefaultMargin}" Background="Transparent">
+        
         <controls:Panorama Title="songkick">
             <controls:PanoramaItem Header="trackings">
                 <my:TrackingControl DataContext="{Binding TrackingControlViewModel}" />
             </controls:PanoramaItem>
             <controls:PanoramaItem Header="near you">
-                <ListBox ItemsSource="{Binding CalendarEntries}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding}"/>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                <my:NearYouControl DataContext="{Binding NearYouControlViewModel}"/>
             </controls:PanoramaItem>
         </controls:Panorama>
+        
+        <custom:BindableApplicationBar Mode="Minimized" x:Name="AppBar" BarOpacity="1.0" IsVisible="{Binding IsBarVisible}" >
+            <custom:BindableApplicationBarIconButton Text="Add" IconUri="/images/appbar.add.rest.png" />
+            <custom:BindableApplicationBar.MenuItems>
+                <custom:BindableApplicationBarMenuItem  Text="Settings" />
+            </custom:BindableApplicationBar.MenuItems>
+        </custom:BindableApplicationBar>
+        
     </Grid>
-
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized">
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="Settings"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
-
 </phone:PhoneApplicationPage>

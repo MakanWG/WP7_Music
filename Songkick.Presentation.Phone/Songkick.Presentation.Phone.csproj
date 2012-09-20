@@ -62,6 +62,9 @@
     <Reference Include="WG.Presentation.Phone">
       <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Presentation.Phone.dll</HintPath>
     </Reference>
+    <Reference Include="WG.Tools.Phone">
+      <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Tools.Phone.dll</HintPath>
+    </Reference>
     <Reference Include="WG.Views.Phone">
       <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Views.Phone.dll</HintPath>
     </Reference>

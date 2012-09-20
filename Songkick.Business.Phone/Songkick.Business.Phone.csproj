@@ -53,6 +53,9 @@
     <Reference Include="WG.Network.Phone">
       <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Network.Phone.dll</HintPath>
     </Reference>
+    <Reference Include="WG.Tools.Phone">
+      <HintPath>..\..\..\Visual Studio 2010\Projects\WG\Libs\WG.Tools.Phone.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IArtistsBusinessService.cs" />

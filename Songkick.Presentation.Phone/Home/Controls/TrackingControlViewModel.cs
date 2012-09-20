@@ -13,17 +13,17 @@ using Songkick.Entities.Phone.General;
 using System.Threading;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using WG.Tools.Phone.Helpers;
 
 namespace Songkick.Presentation.Phone.Home.Controls
 {
     public class TrackingControlViewModel : ViewModelBase
     {
-        public ObservableCollection<CalendarEntry> CalendarEntries
+        public ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>> CalendarEntries
         {
-            get { return GetValue<ObservableCollection<CalendarEntry>>("CalendarEntries", null); }
-            set { SetValue<ObservableCollection<CalendarEntry>>("CalendarEntries", value); }
+            get { return GetValue<ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>>>("CalendarEntries", null); }
+            set { SetValue<ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>>>("CalendarEntries", value); }
         }
-
 
         public TrackingControlViewModel()
             :base()
@@ -31,7 +31,7 @@ namespace Songkick.Presentation.Phone.Home.Controls
             GetTrackings();
         }
 
-        public void GetTrackings()
+        private void GetTrackings()
         {
             this.ExecuteAsync(func => CalendarEntries =
                 this.BusinessServices().Calendar.GetTrackedArtistsCalendar("DavidMelo"));

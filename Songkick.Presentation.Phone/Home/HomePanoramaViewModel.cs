@@ -18,11 +18,13 @@ namespace Songkick.Presentation.Phone.Home
     public class HomePanoramaViewModel : ViewModelBase
     {
         public TrackingControlViewModel TrackingControlViewModel { get; set; }
+        public NearYouControlViewModel NearYouControlViewModel { get; set; }
         
         public HomePanoramaViewModel()
             :base()
         {
             TrackingControlViewModel = new TrackingControlViewModel();
+            NearYouControlViewModel = new NearYouControlViewModel();
         }
     }
 }

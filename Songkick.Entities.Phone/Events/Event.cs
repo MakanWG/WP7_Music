@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using Songkick.Entities.Phone.Venues;
+using System;
 
 namespace Songkick.Entities.Phone.Events
 {
@@ -34,5 +36,11 @@ namespace Songkick.Entities.Phone.Events
 
         [JsonProperty("popularity")]
         public decimal Poularity { get; set; }
+
+        [JsonIgnore]
+        public DateTimeOffset DateOffset { get { return DateTimeOffset.Parse(EventStart.Date); } }
+
+        [JsonIgnore]
+        public string FullVenueName { get { return string.Format("{0}, {1}", Venue.DisplayName, EventLocation.City); } }
     }
 }

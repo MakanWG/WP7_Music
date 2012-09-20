@@ -25,7 +25,7 @@ namespace Songkick.Client.Phone.Services
         {
            RequestObject requestObject = new RequestObject();
            return (Response)requestObject
-               .Get()
+                .Get()
                 .SetUri(Constants.Uri)
                 .AppendPath("users")
                 .AppendPath(username)
@@ -35,17 +35,18 @@ namespace Songkick.Client.Phone.Services
                 .ToResponseEntity(typeof(Response));
         }
 
-        public ResultsPage GetAttendedCalendar(string username)
+        public Response GetAttendedCalendar(string username)
         {
             RequestObject requestObject = new RequestObject();
-            return (ResultsPage)requestObject
+            return (Response)requestObject
+                .Get()
                 .SetUri(Constants.Uri)
                 .AppendPath("users")
                 .AppendPath(username)
                 .AppendPath("calendar.json")
                 .Param("reason", "attendance")
                 .Param("apikey", Constants.APIKey)
-                .ToResponseEntity(typeof(ResultsPage));
+                .ToResponseEntity(typeof(Response));
         }
     }
 }

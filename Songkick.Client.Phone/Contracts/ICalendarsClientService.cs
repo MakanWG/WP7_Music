@@ -17,6 +17,6 @@ namespace Songkick.Client.Phone.Contracts
     {
         Response GetTrackedArtistsCalendar(string username);
 
-        ResultsPage GetAttendedCalendar(string username);
+        Response GetAttendedCalendar(string username);
     }
 }

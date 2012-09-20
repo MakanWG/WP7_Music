@@ -12,13 +12,14 @@ using WG.Network.Phone.Query;
 using Songkick.Entities.Phone.General;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using WG.Tools.Phone.Helpers;
 
 namespace Songkick.Business.Phone.Contracts
 {
     public interface ICalendarsBusinessService
     {
-        ObservableCollection<CalendarEntry> GetTrackedArtistsCalendar(string username);
+        ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>> GetTrackedArtistsCalendar(string username);
 
-        ResultsPage GetAttendedCalendar(string username);
+        ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>> GetAttendedCalendar(string username);
     }
 }

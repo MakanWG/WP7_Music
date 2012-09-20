@@ -5,6 +5,6 @@ namespace Songkick.Entities.Phone.Venues
     public class Country
     {
         [JsonProperty("displayName")]
-        public int DisplayName { get; set; }
+        public string DisplayName { get; set; }
     }
 }

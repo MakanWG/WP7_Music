@@ -1,0 +1,31 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wgcontrols="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone">
+
+    <DataTemplate x:Key="CalendarItemTemplate">
+        <wgcontrols:WGButton Margin="{StaticResource DefaultVerticalSpacing}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Rectangle Height="87" Width="87" Fill="LightSeaGreen" Grid.RowSpan="2"/>
+                <TextBlock Text="{Binding Event.Performance[0].DisplayName}" Grid.Column="1" TextTrimming="WordEllipsis"/>
+                <TextBlock Text="{Binding Event.FullVenueName}" Grid.Row="1" Grid.Column="1" TextTrimming="WordEllipsis"/>
+            </Grid>
+        </wgcontrols:WGButton>
+    </DataTemplate>
+    <DataTemplate x:Key="CalendarHeaderTemplate">
+        <TextBlock Text="{Binding Key, StringFormat='D'}"/>
+    </DataTemplate>
+    <DataTemplate x:Key="CalendarJumpTemplate">
+        <TextBlock Text="{Binding Key, StringFormat='D'}"/>
+    </DataTemplate>
+</ResourceDictionary>
