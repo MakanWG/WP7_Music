@@ -3,29 +3,39 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wgcontrols="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone">
+    xmlns:wgcontrols="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
 
     <DataTemplate x:Key="CalendarItemTemplate">
-        <wgcontrols:WGButton Margin="{StaticResource DefaultVerticalSpacing}" HorizontalAlignment="Left">
+        <wgcontrols:WGButton Command="{Binding DataContext.GoToEventCommand, ElementName=TrackingList}"
+                             Margin="{StaticResource DefaultVerticalSpacing}" 
+                             HorizontalAlignment="Left"
+                             CommandParameter="{Binding EventEx}">
             <Grid HorizontalAlignment="Left">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Rectangle HorizontalAlignment="Left" Height="87" Width="87" Fill="LightSeaGreen" Grid.RowSpan="2"/>
-                <TextBlock Text="{Binding Event.Performance[0].DisplayName}" Grid.Column="1" TextTrimming="WordEllipsis"/>
-                <TextBlock Text="{Binding Event.FullVenueName}" Grid.Row="1" Grid.Column="1" TextTrimming="WordEllipsis"/>
+                <Rectangle Margin="{StaticResource RightDefaultMargin}" HorizontalAlignment="Left" Height="100" Width="100" Fill="{StaticResource DarkGrayBrush}"/>
+                <StackPanel Grid.Column="1" DataContext="{Binding EventEx}">
+                    <TextBlock Style="{StaticResource SemiLargeTextBlockStyle}" Text="{Binding Performance[0].DisplayName}" TextTrimming="WordEllipsis"/>
+                    <TextBlock Text="{Binding Venue.DisplayName}" TextTrimming="WordEllipsis"/>
+                    <TextBlock Text="{Binding EventLocation.City}" TextTrimming="WordEllipsis"/>
+                </StackPanel>
             </Grid>
         </wgcontrols:WGButton>
     </DataTemplate>
     <DataTemplate x:Key="CalendarHeaderTemplate">
-        <TextBlock Text="{Binding Key, StringFormat='D'}"/>
+        <Border HorizontalAlignment="Left" Background="{StaticResource DarkGrayBrush}" Height="100" Width="100" Margin="{StaticResource DefaultVerticalSpacing}">
+            <TextBlock Style="{StaticResource JumpListTemplate}" Text="{Binding Key, StringFormat='ddd dd MMM yyyy'}"/>
+        </Border>
     </DataTemplate>
     <DataTemplate x:Key="CalendarJumpTemplate">
-        <TextBlock Text="{Binding Key, StringFormat='D'}"/>
+        <Border Background="{StaticResource DarkGrayBrush}" Height="100" Width="100" Margin="0,0,12,25">
+            <TextBlock Style="{StaticResource JumpListTemplate}" Text="{Binding Key, StringFormat='ddd dd MMM yyyy'}"/>
+        </Border>
     </DataTemplate>
+    <ItemsPanelTemplate x:Key="JumpListPanel">
+        <toolkit:WrapPanel />
+    </ItemsPanelTemplate>
 </ResourceDictionary>

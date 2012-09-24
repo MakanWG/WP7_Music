@@ -18,7 +18,9 @@ namespace Songkick.Presentation.Phone
         private static Application _app;
         public static void InitializeInjection()
         {
-             _kernel = new StandardKernel(new Module());
+            Module module = new Module();
+            _kernel = new StandardKernel();
+            _kernel.Load(module);
         }
 
         public static void SetApp(Application app)

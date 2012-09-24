@@ -64,6 +64,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventDetail\EventDetailPage.xaml.cs">
+      <DependentUpon>EventDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Home\HomePanorama.xaml.cs">
       <DependentUpon>HomePanorama.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="EventDetail\EventDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Home\HomePanorama.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

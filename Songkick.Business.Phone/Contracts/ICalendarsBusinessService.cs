@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Songkick.Business.Phone.ExtendedEntities;
 using WG.Network.Phone.Query;
 using Songkick.Entities.Phone.General;
 using System.Collections.Generic;
@@ -18,8 +19,8 @@ namespace Songkick.Business.Phone.Contracts
 {
     public interface ICalendarsBusinessService
     {
-        ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>> GetTrackedArtistsCalendar(string username);
+        ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>> GetTrackedArtistsCalendar(string username);
 
-        ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>> GetAttendedCalendar(string username);
+        ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>> GetAttendedCalendar(string username);
     }
 }

@@ -15,10 +15,10 @@
     <Grid Margin="{StaticResource DefaultMargin}">
         <toolkit:LongListSelector 
             x:Name="TrackingList"
-            VirtualizingStackPanel.VirtualizationMode="Recycling"
             ItemsSource="{Binding CalendarEntries}"
             ItemTemplate="{StaticResource CalendarItemTemplate}"
             GroupHeaderTemplate="{StaticResource CalendarHeaderTemplate}"
-            GroupItemTemplate="{StaticResource CalendarJumpTemplate}"/>
+            GroupItemTemplate="{StaticResource CalendarJumpTemplate}"
+            GroupItemsPanel="{StaticResource JumpListPanel}"/>
     </Grid>
 </UserControl>

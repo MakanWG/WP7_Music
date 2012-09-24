@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Songkick.Business.Phone.Contracts;
+using Songkick.Business.Phone.ExtendedEntities;
 using WG.Network.Phone.Query;
 using Songkick.Client.Phone.Contracts;
 using Songkick.Client.Phone.Services;
@@ -29,32 +30,34 @@ namespace Songkick.Business.Phone.Services
             _calendarsClientService = calendarClientService;
         }
 
-        public ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>> GetTrackedArtistsCalendar(string username)
+        public ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>> GetTrackedArtistsCalendar(string username)
         {
-            var a =  _calendarsClientService
+            var a =   _calendarsClientService
                 .GetTrackedArtistsCalendar(username)
                 .ResultsPage
                 .Results
                 .CalendarEntries
-                .GroupBy(entry =>
-                    entry.Event.DateOffset)
-                .Select(group => group = new WGGrouping<DateTimeOffset, CalendarEntry>(group));
-            var b = from objects in a select new WGGrouping<DateTimeOffset, CalendarEntry>(objects);
-            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>>(b);        
+                .Select(entry => new CalendarEntryEx(entry))
+                .GroupBy(entry => 
+                    entry.EventEx.DateOffset)
+                .Select(group => new WGGrouping<DateTimeOffset, CalendarEntryEx>(group));
+            var b = from objects in a select new WGGrouping<DateTimeOffset, CalendarEntryEx>(objects);
+            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>>(b);        
         }
 
-        public ObservableCollection<WGGrouping<DateTimeOffset,CalendarEntry>> GetAttendedCalendar(string username)
+        public ObservableCollection<WGGrouping<DateTimeOffset,CalendarEntryEx>> GetAttendedCalendar(string username)
         {
             var a = _calendarsClientService
                 .GetAttendedCalendar(username)
                 .ResultsPage
                 .Results
                 .CalendarEntries
+                .Select(entry => new CalendarEntryEx(entry))
                 .GroupBy(entry => 
-                    entry.Event.DateOffset);
-            var b = from objects in a select new WGGrouping<DateTimeOffset, CalendarEntry>(objects);
+                    entry.EventEx.DateOffset);
+            var b = from objects in a select new WGGrouping<DateTimeOffset, CalendarEntryEx>(objects);
 
-            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntry>>(b);
+            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>>(b);
                 
         }
     }

@@ -8,12 +8,17 @@ using WG.Views.Phone;
 using Songkick.Presentation.Phone.MainPage;
 using System.Collections;
 using Songkick.Presentation.Phone.Home;
+using Songkick.Presentation.Phone.EventDetail;
 
 namespace Songkick.Presentation.Phone
 {
     public class Module : NinjectModule
     {
+        public Module()
+        {
+        }
         public PageDeclaration[] Pages { get; set; }
+
         public override void Load()
         {
             RegisterClientInterfaces();
@@ -23,6 +28,7 @@ namespace Songkick.Presentation.Phone
 
         private void RegisterClientInterfaces()
         {
+            Bind<ClientServicesLocator>().To<ClientServicesLocator>();
             Bind<IArtistsClientService>().To<ArtistsClientService>();
             Bind<ICalendarsClientService>().To<CalendarsClientService>();
             Bind<IEventsClientService>().To<EventsClientService>();
@@ -32,6 +38,7 @@ namespace Songkick.Presentation.Phone
 
         private void RegisterBusinessInterfaces()
         {
+            Bind<BusinessServicesLocator>().To<BusinessServicesLocator>();
             Bind<ICalendarsBusinessService>().To<CalendarsBusinessService>();
             Bind<IArtistsBusinessService>().To<ArtistsBusinessService>();
             Bind<IEventsBusinessService>().To<EventsBusinessService>();
@@ -41,7 +48,7 @@ namespace Songkick.Presentation.Phone
 
         private void RegisterPages()
         {
-            Pages = new PageDeclaration[]
+            Pages = new[]
            {
                new PageDeclaration
                {
@@ -54,6 +61,12 @@ namespace Songkick.Presentation.Phone
                    ApplicationPage = ApplicationPages.Home,
                    Uri = "/Home/HomePanorama.xaml",
                    ViewModel = new HomePanoramaViewModel()
+               },
+               new PageDeclaration
+               {
+                   ApplicationPage = ApplicationPages.EventDetail,
+                   Uri = "/EventDetail/EventDetailPage.xaml",
+                   ViewModel = new EventDetailPageViewModel()
                },
            };
         }

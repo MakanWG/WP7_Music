@@ -4,6 +4,23 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
 
+    <!--THICKNESSES-->
     <Thickness x:Key="DefaultMargin">12,0,12,0</Thickness>
     <Thickness x:Key="DefaultVerticalSpacing">0,0,0,12</Thickness>
+    <Thickness x:Key="VerticalSpacing">0,0,0,25</Thickness>
+    <Thickness x:Key="RightDefaultMargin">0,0,12,0</Thickness>
+
+    <!--COLORS-->
+    <Color x:Key="DarkGrayColor">#252525</Color>
+    <Color x:Key="PinkColor">#f80046</Color>
+    <Color x:Key="BlackColor">#000000</Color>
+    <Color x:Key="WhiteColor">#ffffff</Color>
+
+    <!--BRUSHES-->
+    <SolidColorBrush x:Key="DarkGrayBrush" Color="{StaticResource DarkGrayColor}"/>
+    <SolidColorBrush x:Key="PinkBrush" Color="{StaticResource PinkColor}"/>
+    <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource BlackColor}"/>
+    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource WhiteColor}"/>
+   
+
 </ResourceDictionary>

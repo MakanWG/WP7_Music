@@ -7,5 +7,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="CommonResources.xaml"/>
         <ResourceDictionary Source="DataTemplates.xaml"/>
+        <ResourceDictionary Source="TextBlock.xaml"/>
+        <ResourceDictionary Source="Title.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

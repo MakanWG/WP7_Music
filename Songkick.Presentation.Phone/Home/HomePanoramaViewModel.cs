@@ -26,5 +26,10 @@ namespace Songkick.Presentation.Phone.Home
             TrackingControlViewModel = new TrackingControlViewModel();
             NearYouControlViewModel = new NearYouControlViewModel();
         }
+
+        public override void Charged()
+        {
+           
+        }
     }
 }

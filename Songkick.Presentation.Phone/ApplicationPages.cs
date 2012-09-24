@@ -16,5 +16,6 @@ namespace Songkick.Presentation.Phone
         Default = 0,
         Main,
         Home,
+        EventDetail,
     }
 }

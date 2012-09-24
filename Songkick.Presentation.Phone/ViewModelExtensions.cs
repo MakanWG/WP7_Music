@@ -12,6 +12,7 @@ using WG.Presentation.Phone.ViewModels;
 using Songkick.Client.Phone;
 using Songkick.Business.Phone;
 using Songkick.Presentation.Phone.ServicesLocators;
+using Ninject;
 
 namespace Songkick.Presentation.Phone
 {
@@ -24,7 +25,8 @@ namespace Songkick.Presentation.Phone
 
         public static BusinessServicesLocator BusinessServices(this ViewModelBase vmbase)
         {
-            return new BusinessServicesLocator(Initializer.GetKernel());
+            return Initializer.GetKernel().Get<BusinessServicesLocator>();
+            // return new BusinessServicesLocator(Initializer.GetKernel());
         }
 
         public static ServicesLocator Services(this ViewModelBase vmbase)

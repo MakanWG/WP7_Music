@@ -23,7 +23,7 @@ namespace Songkick.Client.Phone.Services
         }
         public Response GetTrackedArtistsCalendar(string username)
         {
-           RequestObject requestObject = new RequestObject();
+           var requestObject = new RequestObject();
            return (Response)requestObject
                 .Get()
                 .SetUri(Constants.Uri)
@@ -37,7 +37,7 @@ namespace Songkick.Client.Phone.Services
 
         public Response GetAttendedCalendar(string username)
         {
-            RequestObject requestObject = new RequestObject();
+            var requestObject = new RequestObject();
             return (Response)requestObject
                 .Get()
                 .SetUri(Constants.Uri)
