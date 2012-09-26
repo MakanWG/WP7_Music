@@ -10,6 +10,11 @@
     <Thickness x:Key="VerticalSpacing">0,0,0,25</Thickness>
     <Thickness x:Key="RightDefaultMargin">0,0,12,0</Thickness>
 
+    <Thickness x:Key="DoubleDefaultMargin">24,0,12,0</Thickness>
+    <Thickness x:Key="DoubleDefaultVerticalSpacing">0,0,0,24</Thickness>
+    <Thickness x:Key="DoubleVerticalSpacing">0,0,0,50</Thickness>
+    <Thickness x:Key="DoubleRightDefaultMargin">0,0,24,0</Thickness>
+
     <!--COLORS-->
     <Color x:Key="DarkGrayColor">#252525</Color>
     <Color x:Key="PinkColor">#f80046</Color>

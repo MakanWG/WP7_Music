@@ -54,11 +54,17 @@ namespace Songkick.Presentation.Phone
 
         private static object GetParameter(string key)
         {
-            return Initializer
-                    .GetApp()
-                    .Resources
-                    .Select(o => o)
-                    .Single( o =>  o.Key.ToString() == key).Value;
+            var parameter = Initializer
+                                .GetApp()
+                                .Resources
+                                .Select(o => o)
+                                .Single( o =>  o.Key.ToString() == key)
+                                .Value;
+            Initializer
+                .GetApp()
+                .Resources
+                .Remove(key);
+            return parameter;
         }
 
         public static void NavigateToHome(this NavigationController controller, ApplicationPages page)

@@ -4,11 +4,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:local="clr-namespace:Songkick.Phone.Localization"
     >
 
     <!--Application Resources-->
     <Application.Resources>
-        <ResourceDictionary x:Key="dico" Source="Styles/_Styles.xaml"/>
+        <ResourceDictionary x:Key="dico">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/_Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary> 
+        <local:LocalizedStrings x:Key="LocalizedStrings"/>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

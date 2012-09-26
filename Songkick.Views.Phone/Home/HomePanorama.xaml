@@ -18,10 +18,10 @@
     <Grid Margin="{StaticResource DefaultMargin}" Background="Transparent">
         
         <controls:Panorama Title="songkick">
-            <controls:PanoramaItem Header="trackings">
+            <controls:PanoramaItem Header="{Binding LocalizedResources.TrackingPanoramaItem, Source={StaticResource LocalizedStrings}}">
                 <my:TrackingControl DataContext="{Binding TrackingControlViewModel}" />
             </controls:PanoramaItem>
-            <controls:PanoramaItem Header="near you">
+            <controls:PanoramaItem Header="{Binding LocalizedResources.NearYouPanoramaItem, Source={StaticResource LocalizedStrings}}">
                 <my:NearYouControl DataContext="{Binding NearYouControlViewModel}"/>
             </controls:PanoramaItem>
         </controls:Panorama>
