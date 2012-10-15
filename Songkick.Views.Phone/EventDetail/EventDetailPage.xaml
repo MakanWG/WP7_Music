@@ -7,25 +7,50 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wgcontrols="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0">
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0"
+    toolkit:TiltEffect.IsTiltEnabled="True">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid>
+    <Grid x:Name="RootGrid">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <wgcontrols:TitleControl 
             TitleText="{Binding LocalizedResources.EventDetailsTitle, Source={StaticResource LocalizedStrings}}" />
-        <StackPanel Grid.Row="1" DataContext="{Binding Event}" Margin="{StaticResource DefaultMargin}">
-            <TextBlock Text="{Binding DateOffset, StringFormat='D'}" Margin="{StaticResource DefaultMargin}" />
-            <TextBlock Text="{Binding DisplayName}" Style="{StaticResource PhoneTextLargeStyle}"/>
+        <StackPanel 
+            Grid.Row="1" 
+            DataContext="{Binding Event}" 
+            Margin="{StaticResource DefaultMargin}">
+            <TextBlock 
+                Text="{Binding DateOffset, StringFormat='D'}" 
+                Margin="{StaticResource DefaultMargin}" />
+            <TextBlock 
+                HorizontalAlignment="Left"
+                Text="{Binding Performance[0].DisplayName}" 
+                Style="{StaticResource PhoneTextLargeStyle}"
+                TextWrapping="Wrap"/>
+        </StackPanel>
+        <StackPanel
+            Grid.Row="2"
+            DataContext="{Binding Venue}"
+            Margin="{StaticResource DefaultMargin}"
+            x:Name="VenuePanel">
+            <wgcontrols:WGButton 
+                Margin="{StaticResource DefaultMargin}" 
+                HorizontalAlignment="Left" 
+                Command="{Binding DataContext.SearchOnBingCommand, ElementName=RootGrid}">
+                <TextBlock 
+                    Text="{Binding FullAddress}" 
+                    TextWrapping="Wrap" 
+                    Style="{StaticResource SkLinkStyle}"/>
+            </wgcontrols:WGButton>
         </StackPanel>
     </Grid>
-
 </phone:PhoneApplicationPage>

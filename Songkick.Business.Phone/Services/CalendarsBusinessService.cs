@@ -32,33 +32,30 @@ namespace Songkick.Business.Phone.Services
 
         public ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>> GetTrackedArtistsCalendar(string username)
         {
-            var a =   _calendarsClientService
+            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>>(
+                _calendarsClientService
                 .GetTrackedArtistsCalendar(username)
                 .ResultsPage
                 .Results
                 .CalendarEntries
                 .Select(entry => new CalendarEntryEx(entry))
-                .GroupBy(entry => 
+                .GroupBy(entry =>
                     entry.EventEx.DateOffset)
-                .Select(group => new WGGrouping<DateTimeOffset, CalendarEntryEx>(group));
-            var b = from objects in a select new WGGrouping<DateTimeOffset, CalendarEntryEx>(objects);
-            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>>(b);        
+                .Select(group => new WGGrouping<DateTimeOffset, CalendarEntryEx>(group)));
         }
 
-        public ObservableCollection<WGGrouping<DateTimeOffset,CalendarEntryEx>> GetAttendedCalendar(string username)
+        public ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>> GetAttendedCalendar(string username)
         {
-            var a = _calendarsClientService
+            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>>(
+                _calendarsClientService
                 .GetAttendedCalendar(username)
                 .ResultsPage
                 .Results
                 .CalendarEntries
                 .Select(entry => new CalendarEntryEx(entry))
-                .GroupBy(entry => 
-                    entry.EventEx.DateOffset);
-            var b = from objects in a select new WGGrouping<DateTimeOffset, CalendarEntryEx>(objects);
-
-            return new ObservableCollection<WGGrouping<DateTimeOffset, CalendarEntryEx>>(b);
-                
+                .GroupBy(entry =>
+                    entry.EventEx.DateOffset)
+                .Select(group => new WGGrouping<DateTimeOffset, CalendarEntryEx>(group)));
         }
     }
 }

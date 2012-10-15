@@ -7,6 +7,6 @@
 
     <Style TargetType="wgcontrols:TitleControl">
         <Setter Property="BackgroundColor" Value="#252525"/>
-        <Setter Property="BaseLogo" Value="/Assets/sk_white_50x50.png"/>
+        <Setter Property="BaseLogo" Value="/Assets/sk_pink_50x50.png"/>
     </Style>
 </ResourceDictionary>

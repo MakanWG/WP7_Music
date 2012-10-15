@@ -117,11 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountAction" xml:space="preserve">
+    <value>account</value>
+  </data>
+  <data name="ArtistsAction" xml:space="preserve">
+    <value>my artists</value>
+  </data>
+  <data name="ArtistsPivotItem" xml:space="preserve">
+    <value>artists</value>
+  </data>
+  <data name="CalendarAction" xml:space="preserve">
+    <value>calendar</value>
+  </data>
+  <data name="CalendarTitle" xml:space="preserve">
+    <value>CALENDAR</value>
+  </data>
   <data name="EventDetailsTitle" xml:space="preserve">
     <value>EVENT DETAILS</value>
   </data>
+  <data name="LocationsAction" xml:space="preserve">
+    <value>locations</value>
+  </data>
+  <data name="MyArtistsTitle" xml:space="preserve">
+    <value>MY ARTISTS</value>
+  </data>
   <data name="NearYouPanoramaItem" xml:space="preserve">
     <value>near you</value>
+  </data>
+  <data name="PlansPivotItem" xml:space="preserve">
+    <value>plans</value>
+  </data>
+  <data name="SearchAction" xml:space="preserve">
+    <value>search</value>
   </data>
   <data name="TrackingPanoramaItem" xml:space="preserve">
     <value>trackings</value>

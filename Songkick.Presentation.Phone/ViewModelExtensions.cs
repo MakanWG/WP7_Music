@@ -26,12 +26,11 @@ namespace Songkick.Presentation.Phone
         public static BusinessServicesLocator BusinessServices(this ViewModelBase vmbase)
         {
             return Initializer.GetKernel().Get<BusinessServicesLocator>();
-            // return new BusinessServicesLocator(Initializer.GetKernel());
         }
 
         public static ServicesLocator Services(this ViewModelBase vmbase)
         {
-            return new ServicesLocator();
+            return Initializer.GetKernel().Get<ServicesLocator>();
         }
     }
 }

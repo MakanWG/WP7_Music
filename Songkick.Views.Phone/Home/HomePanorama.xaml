@@ -13,11 +13,14 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="False" shell:SystemTray.Opacity="0">
 
     <Grid Margin="{StaticResource DefaultMargin}" Background="Transparent">
         
         <controls:Panorama Title="songkick">
+            <controls:PanoramaItem>
+                <my:FastActionsControl DataContext="{Binding FastActionsControlViewModel}" Margin="0,-24,0,0"/>
+            </controls:PanoramaItem>
             <controls:PanoramaItem Header="{Binding LocalizedResources.TrackingPanoramaItem, Source={StaticResource LocalizedStrings}}">
                 <my:TrackingControl DataContext="{Binding TrackingControlViewModel}" />
             </controls:PanoramaItem>
@@ -32,6 +35,5 @@
                 <custom:BindableApplicationBarMenuItem  Text="Settings" />
             </custom:BindableApplicationBar.MenuItems>
         </custom:BindableApplicationBar>
-        
     </Grid>
 </phone:PhoneApplicationPage>

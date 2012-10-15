@@ -13,7 +13,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Songkick.Presentation.Phone;
-using WG.Views.Phone;
+using WG.Views.Phone.Controls;
 using Songkick.Presentation.Phone.MainPage;
 using Songkick.Views.Phone;
 
@@ -59,8 +59,10 @@ namespace Songkick.Phone
                 // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
+                MetroGridHelper.IsVisible = true;
             }
             Initializer.InitializeInjection();
+            TiltEffect.TiltableItems.Add(typeof(WGButton));
         }
 
         // Code to execute when the application is launching (eg, from Start)

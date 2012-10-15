@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Songkick.Views.Phone.Home.UserControls.FastActionsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wgcontrols="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left">
+            <wgcontrols:WGButton
+                Command="{Binding GoToCalendarCommand}">
+                <TextBlock Style="{StaticResource PhoneTextTitle1Style}" Text="{Binding LocalizedResources.CalendarAction, Source={StaticResource LocalizedStrings}}"/>
+            </wgcontrols:WGButton>
+            <wgcontrols:WGButton
+                Command="{Binding GoToMyArtistsCommand}">
+                <TextBlock Style="{StaticResource PhoneTextTitle1Style}" Text="{Binding LocalizedResources.ArtistsAction, Source={StaticResource LocalizedStrings}}"/>
+            </wgcontrols:WGButton>
+            <wgcontrols:WGButton>
+                <TextBlock Style="{StaticResource PhoneTextTitle1Style}" Text="{Binding LocalizedResources.LocationsAction, Source={StaticResource LocalizedStrings}}"/>
+            </wgcontrols:WGButton>
+        </StackPanel>
+    </Grid>
+</UserControl>

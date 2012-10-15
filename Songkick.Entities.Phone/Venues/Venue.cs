@@ -41,7 +41,7 @@ namespace Songkick.Entities.Phone.Venues
         public string Website { get; set; }
 
         [JsonProperty("capacity")]
-        public int Capacity { get; set; }
+        public int? Capacity { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }

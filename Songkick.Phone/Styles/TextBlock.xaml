@@ -10,8 +10,24 @@
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="Margin" Value="6,0,0,0"/>
     </Style>
+
+    <Style TargetType="TextBlock" x:Key="NormalJumpListTemplate">
+        <Setter Property="FontSize" Value="45"/>
+        <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+        <Setter Property="Margin" Value="6,0,0,0"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="SkLinkStyle">
+        <Setter Property="TextDecorations" Value="Underline"/>
+        <Setter Property="Foreground" Value="#f80046"/>
+    </Style>
     
     <Style TargetType="TextBlock" x:Key="SemiLargeTextBlockStyle">
         <Setter Property="FontSize" Value="30"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="FastActionStyle">
+        <Setter Property="FontSize" Value="50"/>
     </Style>
 </ResourceDictionary>

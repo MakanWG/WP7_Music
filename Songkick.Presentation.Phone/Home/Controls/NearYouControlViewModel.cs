@@ -29,8 +29,6 @@ namespace Songkick.Presentation.Phone.Home.Controls
             get { return GetValue<ICommand>("GoToEventCommand", null); }
             set { SetValue<ICommand>("GoToEventCommand", value); }
         }
-
-       // public ICommand GoToEventCommand { get; set; }
         
         public NearYouControlViewModel()
             :base()

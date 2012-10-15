@@ -3,12 +3,16 @@ using Songkick.Client.Phone.Contracts;
 using Songkick.Client.Phone.Services;
 using Songkick.Business.Phone.Contracts;
 using Songkick.Business.Phone.Services;
+using Songkick.Presentation.Phone.Calendar;
+using Songkick.Presentation.Phone.MyArtists;
 using Songkick.Presentation.Phone.ServicesLocators;
+using WG.Tools.Phone.Contracts;
 using WG.Views.Phone;
 using Songkick.Presentation.Phone.MainPage;
 using System.Collections;
 using Songkick.Presentation.Phone.Home;
 using Songkick.Presentation.Phone.EventDetail;
+using WG.Tools.Phone.Services;
 
 namespace Songkick.Presentation.Phone
 {
@@ -34,6 +38,7 @@ namespace Songkick.Presentation.Phone
             Bind<IEventsClientService>().To<EventsClientService>();
             Bind<ILocationsClientService>().To<LocationsClientService>();
             Bind<IVenuesClientService>().To<VenuesClientService>();
+            Bind<ITrackingClientService>().To<TrackingClientService>();
         }
 
         private void RegisterBusinessInterfaces()
@@ -44,14 +49,21 @@ namespace Songkick.Presentation.Phone
             Bind<IEventsBusinessService>().To<EventsBusinessService>();
             Bind<ILocationsBusinessService>().To<LocationsBusinessService>();
             Bind<IVenuesBusinessService>().To<VenuesBusinessService>();
+            Bind<ITrackingBusinessService>().To<TrackingBusinessService>();
+        }
+
+        private void RegisterServicesInterface()
+        {
+            Bind<ServicesLocator>().To<ServicesLocator>();
+            Bind<ISettingsService>().To<SettingsService>();
         }
 
         private void RegisterPages()
         {
             Pages = new[]
-           {
-               new PageDeclaration
-               {
+            {
+                new PageDeclaration
+                {
                    ApplicationPage = ApplicationPages.Main, 
                    Uri = "/MainPage/MainPage.xaml",
                    ViewModel = new EmptyViewModel()
@@ -67,6 +79,18 @@ namespace Songkick.Presentation.Phone
                    ApplicationPage = ApplicationPages.EventDetail,
                    Uri = "/EventDetail/EventDetailPage.xaml",
                    ViewModel = new EventDetailPageViewModel()
+               },
+               new PageDeclaration
+               {
+                   ApplicationPage = ApplicationPages.Calendar,
+                   Uri = "/Calendar/CalendarPivot.xaml",
+                   ViewModel = new CalendarPivotViewModel()
+               },
+               new PageDeclaration
+               {
+                   ApplicationPage = ApplicationPages.MyArtists,
+                   Uri = "/MyArtists/MyArtistsPage.xaml",
+                   ViewModel = new MyArtistsPageViewModel()
                },
            };
         }

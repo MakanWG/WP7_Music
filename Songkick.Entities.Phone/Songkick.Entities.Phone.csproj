@@ -67,6 +67,7 @@
     <Compile Include="General\ResultsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Venues\Country.cs" />
+    <Compile Include="Venues\State.cs" />
     <Compile Include="Venues\Venue.cs" />
     <Compile Include="Venues\Zone.cs" />
   </ItemGroup>

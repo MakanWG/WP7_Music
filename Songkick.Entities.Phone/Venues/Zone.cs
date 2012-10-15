@@ -15,5 +15,8 @@ namespace Songkick.Entities.Phone.Venues
 
         [JsonProperty("id")]
         public long ZoneId { get; set; }
+
+        [JsonProperty("state")]
+        public State State { get; set; }
     }
 }

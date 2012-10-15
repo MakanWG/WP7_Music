@@ -2,6 +2,7 @@
 using Songkick.Entities.Phone.Events;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Songkick.Entities.Phone.Venues;
 
 namespace Songkick.Entities.Phone.General
 {
@@ -11,10 +12,13 @@ namespace Songkick.Entities.Phone.General
         public ObservableCollection<Event> Events { get; set; }
 
         [JsonProperty("venue")]
-        public Venues.Venue Venue { get; set; }
+        public ObservableCollection<Venue> Venues { get; set; }
 
         [JsonProperty("calendarEntry")]
         public ObservableCollection<CalendarEntry> CalendarEntries { get; set; }
+
+        [JsonProperty("artist")]
+        public Artist[] Artists { get; set; }
 
         [JsonProperty("page")]
         public int Page { get; set; }

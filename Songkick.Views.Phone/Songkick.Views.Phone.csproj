@@ -43,6 +43,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
       <HintPath>..\packages\SilverlightToolkitWP.4.2012.6.25\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
@@ -50,6 +51,9 @@
     <Reference Include="Phone7.Fx.Preview">
       <HintPath>..\..\..\Visual Studio 2010\Projects\BindableAppbar\Phone7.Fx.Preview\Bin\Release\Phone7.Fx.Preview.dll</HintPath>
     </Reference>
+    <Reference Include="System.Device" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
@@ -64,11 +68,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendar\CalendarPivot.xaml.cs">
+      <DependentUpon>CalendarPivot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\UserControls\ArtistsUserControl.xaml.cs">
+      <DependentUpon>ArtistsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\UserControls\PlansUserControl.xaml.cs">
+      <DependentUpon>PlansUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EventDetail\EventDetailPage.xaml.cs">
       <DependentUpon>EventDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Home\HomePanorama.xaml.cs">
       <DependentUpon>HomePanorama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home\UserControls\FastActionsControl.xaml.cs">
+      <DependentUpon>FastActionsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Home\UserControls\NearYouControl.xaml.cs">
       <DependentUpon>NearYouControl.xaml</DependentUpon>
@@ -79,14 +95,33 @@
     <Compile Include="MainPage\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyArtists\MyArtistsPage.xaml.cs">
+      <DependentUpon>MyArtistsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Calendar\CalendarPivot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calendar\UserControls\ArtistsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calendar\UserControls\PlansUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EventDetail\EventDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Home\HomePanorama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home\UserControls\FastActionsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyArtists\MyArtistsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

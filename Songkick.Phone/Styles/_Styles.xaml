@@ -9,5 +9,6 @@
         <ResourceDictionary Source="DataTemplates.xaml"/>
         <ResourceDictionary Source="TextBlock.xaml"/>
         <ResourceDictionary Source="Title.xaml"/>
+        <ResourceDictionary Source="WGButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -13,28 +13,29 @@ namespace Songkick.Client.Phone.Services
 
         }
 
-        public ResultsPage SearchVenue(string venue)
+        public Response SearchVenue(string venue)
         {
-            RequestObject requestObject = new RequestObject();
-            return (ResultsPage)requestObject
+            var requestObject = new RequestObject();
+            return (Response)requestObject
+                .Get()
                 .SetUri(Constants.Uri)
                 .AppendPath("search")
                 .AppendPath("venues.json")
                 .Param("query", venue)
                 .Param("apikey", Constants.APIKey)
-                .ToResponseEntity(typeof(ResultsPage));
+                .ToResponseEntity(typeof(Response));
         }
 
-        public ResultsPage GetVenueCalendar(string venueId)
+        public Response GetVenueCalendar(string venueId)
         {
-            RequestObject requestObject = new RequestObject();
-            return (ResultsPage)requestObject
+            var requestObject = new RequestObject();
+            return (Response)requestObject
                 .SetUri(Constants.Uri)
                 .AppendPath("venue")
                 .AppendPath(venueId)
                 .AppendPath("calendar.json")
                 .Param("apikey", Constants.APIKey)
-                .ToResponseEntity(typeof(ResultsPage));
+                .ToResponseEntity(typeof(Response));
         }
     }
 }

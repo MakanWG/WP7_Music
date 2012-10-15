@@ -19,12 +19,14 @@ namespace Songkick.Presentation.Phone.Home
     {
         public TrackingControlViewModel TrackingControlViewModel { get; set; }
         public NearYouControlViewModel NearYouControlViewModel { get; set; }
+        public FastActionsControlViewModel FastActionsControlViewModel { get; set; }
         
         public HomePanoramaViewModel()
             :base()
         {
             TrackingControlViewModel = new TrackingControlViewModel();
             NearYouControlViewModel = new NearYouControlViewModel();
+            FastActionsControlViewModel = new FastActionsControlViewModel();
         }
 
         public override void Charged()

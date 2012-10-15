@@ -72,6 +72,16 @@ namespace Songkick.Presentation.Phone
             NavigateTo(controller, ApplicationPages.Home);
         }
 
+        public static void NavigateToCalendar(this NavigationController controller)
+        {
+            NavigateTo(controller, ApplicationPages.Calendar);
+        }
+
+        public static void NavigateToMyArtists(this NavigationController controller)
+        {
+            NavigateTo(controller, ApplicationPages.MyArtists);
+        }
+
         public static void NavigateToEventDetail(this NavigationController controller, object e)
         {
             var tuple = Tuple.Create(EventParameter, e);

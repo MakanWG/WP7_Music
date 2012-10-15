@@ -6,8 +6,8 @@ namespace Songkick.Client.Phone.Contracts
 {
     public interface IVenuesClientService
     {
-        ResultsPage SearchVenue(string venue);
+        Response SearchVenue(string venue);
 
-        ResultsPage GetVenueCalendar(string venueId);
+        Response GetVenueCalendar(string venueId);
     }
 }

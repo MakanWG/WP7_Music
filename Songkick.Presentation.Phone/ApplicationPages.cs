@@ -17,5 +17,7 @@ namespace Songkick.Presentation.Phone
         Main,
         Home,
         EventDetail,
+        Calendar,
+        MyArtists,
     }
 }

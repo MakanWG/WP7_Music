@@ -6,6 +6,7 @@
     xmlns:wgcontrols="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
 
+    <!--CALENDAR -->
     <DataTemplate x:Key="CalendarItemTemplate">
         <wgcontrols:WGButton Command="{Binding DataContext.GoToEventCommand, ElementName=TrackingList}"
                              Margin="{StaticResource DefaultVerticalSpacing}" 
@@ -35,6 +36,39 @@
             <TextBlock Style="{StaticResource JumpListTemplate}" Text="{Binding Key, StringFormat='ddd dd MMM yyyy'}"/>
         </Border>
     </DataTemplate>
+
+    <!--ARTISTS -->
+    <DataTemplate x:Key="ArtistsItemTemplate">
+        <wgcontrols:WGButton Command="{Binding DataContext.GoToEventCommand, ElementName=ArtistsList}"
+                             Margin="{StaticResource DefaultVerticalSpacing}" 
+                             HorizontalAlignment="Left"
+                             CommandParameter="{Binding EventEx}">
+            <Grid HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Margin="{StaticResource RightDefaultMargin}" HorizontalAlignment="Left" Height="70" Width="70" Fill="{StaticResource DarkGrayBrush}"/>
+                    <TextBlock 
+                        Style="{StaticResource PhoneTextLargeStyle}" 
+                        Text="{Binding DisplayName}" 
+                        TextTrimming="WordEllipsis"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"/>
+            </Grid>
+        </wgcontrols:WGButton>
+    </DataTemplate>
+    <DataTemplate x:Key="ArtistsHeaderTemplate">
+        <Border HorizontalAlignment="Left" Background="{StaticResource DarkGrayBrush}" Height="70" Width="70" Margin="{StaticResource DefaultVerticalSpacing}">
+            <TextBlock Style="{StaticResource NormalJumpListTemplate}" Text="{Binding Key}"/>
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="ArtistsJumpTemplate">
+        <Border Background="{StaticResource DarkGrayBrush}" Height="100" Width="100" Margin="0,0,12,25">
+            <TextBlock Style="{StaticResource NormalJumpListTemplate}" Text="{Binding Key}"/>
+        </Border>
+    </DataTemplate>
+    
     <ItemsPanelTemplate x:Key="JumpListPanel">
         <toolkit:WrapPanel />
     </ItemsPanelTemplate>
