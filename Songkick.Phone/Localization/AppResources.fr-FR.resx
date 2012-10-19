@@ -120,6 +120,9 @@
   <data name="AccountAction" xml:space="preserve">
     <value>compte</value>
   </data>
+  <data name="AccountNameLabel" xml:space="preserve">
+    <value>Nom de compte</value>
+  </data>
   <data name="ArtistsAction" xml:space="preserve">
     <value>mes artistes</value>
   </data>
@@ -138,8 +141,17 @@
   <data name="LocationsAction" xml:space="preserve">
     <value>zones</value>
   </data>
+  <data name="MyAccountCaption" xml:space="preserve">
+    <value>mon compte</value>
+  </data>
+  <data name="MyAccountTitle" xml:space="preserve">
+    <value>MON COMPTE</value>
+  </data>
   <data name="MyArtistsTitle" xml:space="preserve">
-    <value>MY ARTISTS</value>
+    <value>MES ARTISTES</value>
+  </data>
+  <data name="MyLocationsTitle" xml:space="preserve">
+    <value>MES ZONES</value>
   </data>
   <data name="NearYouPanoramaItem" xml:space="preserve">
     <value>à proximité</value>
@@ -152,5 +164,8 @@
   </data>
   <data name="TrackingPanoramaItem" xml:space="preserve">
     <value>suivis</value>
+  </data>
+  <data name="ValidateCaption" xml:space="preserve">
+    <value>Valider</value>
   </data>
 </root>

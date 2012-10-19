@@ -9,17 +9,13 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Songkick.Presentation.Phone
+namespace Songkick.Business.Phone
 {
-    public enum ApplicationPages
+    public static class Constants
     {
-        Default = 0,
-        Main,
-        Home,
-        EventDetail,
-        Calendar,
-        MyArtists,
-        MyLocations,
-        Account,
+        public static class SettingsValues
+        {
+            public static string AccountName = "accountName";
+        }
     }
 }

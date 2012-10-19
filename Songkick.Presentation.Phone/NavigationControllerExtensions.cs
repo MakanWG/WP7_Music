@@ -82,6 +82,22 @@ namespace Songkick.Presentation.Phone
             NavigateTo(controller, ApplicationPages.MyArtists);
         }
 
+        public static void NavigateToMyLocations(this NavigationController controller)
+        {
+            NavigateTo(controller, ApplicationPages.MyLocations);
+        }
+
+        public static void NavigateToAccount(this NavigationController controller)
+        {
+            NavigateTo(controller, ApplicationPages.Account);
+        }
+
+        public static void NavigateBack(this NavigationController controller)
+        {
+            var currentRoot = (PhoneApplicationFrame)Initializer.GetApp().RootVisual;
+            controller.GoBack(currentRoot);
+        }
+
         public static void NavigateToEventDetail(this NavigationController controller, object e)
         {
             var tuple = Tuple.Create(EventParameter, e);

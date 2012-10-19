@@ -3,8 +3,10 @@ using Songkick.Client.Phone.Contracts;
 using Songkick.Client.Phone.Services;
 using Songkick.Business.Phone.Contracts;
 using Songkick.Business.Phone.Services;
+using Songkick.Presentation.Phone.Account;
 using Songkick.Presentation.Phone.Calendar;
 using Songkick.Presentation.Phone.MyArtists;
+using Songkick.Presentation.Phone.MyLocations;
 using Songkick.Presentation.Phone.ServicesLocators;
 using WG.Tools.Phone.Contracts;
 using WG.Views.Phone;
@@ -27,6 +29,7 @@ namespace Songkick.Presentation.Phone
         {
             RegisterClientInterfaces();
             RegisterBusinessInterfaces();
+            RegisterServicesInterface();
             RegisterPages();
         }
 
@@ -50,6 +53,7 @@ namespace Songkick.Presentation.Phone
             Bind<ILocationsBusinessService>().To<LocationsBusinessService>();
             Bind<IVenuesBusinessService>().To<VenuesBusinessService>();
             Bind<ITrackingBusinessService>().To<TrackingBusinessService>();
+            Bind<IAccountBusinessService>().To<AccountBusinessService>();
         }
 
         private void RegisterServicesInterface()
@@ -91,6 +95,18 @@ namespace Songkick.Presentation.Phone
                    ApplicationPage = ApplicationPages.MyArtists,
                    Uri = "/MyArtists/MyArtistsPage.xaml",
                    ViewModel = new MyArtistsPageViewModel()
+               },
+               new PageDeclaration
+               {
+                   ApplicationPage = ApplicationPages.MyLocations,
+                   Uri = "/MyLocations/MyLocationsPage.xaml",
+                   ViewModel = new MyLocationsPageViewModel()
+               },
+               new PageDeclaration
+               {
+                   ApplicationPage = ApplicationPages.Account,
+                   Uri = "/Account/AccountPage.xaml",
+                   ViewModel = new AccountPageViewModel()
                },
            };
         }

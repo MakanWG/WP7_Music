@@ -8,6 +8,7 @@ namespace Songkick.Client.Phone.Contracts
 {
     public interface ITrackingClientService
     {
-        Response GetTrackedArtists(string username);
+        Response GetTrackedArtists(string username, int page);
+        Response GetTrackedLocations(string username);
     }
 }

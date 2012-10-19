@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using Ninject;
 using WG.Presentation.Phone.Navigation;
 using WG.Tools.Phone.Contracts;
+using WG.Tools.Phone.Notifications;
 using WG.Tools.Phone.Services;
 
 namespace Songkick.Presentation.Phone.ServicesLocators
@@ -31,6 +32,11 @@ namespace Songkick.Presentation.Phone.ServicesLocators
         public ISettingsService Settings
         {
             get { return _kernel.Get<ISettingsService>(); }
+        }
+
+        public NotificationsController Notifications
+        {
+            get{return new NotificationsController();}
         }
     }
 }

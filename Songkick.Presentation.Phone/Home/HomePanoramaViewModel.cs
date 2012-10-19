@@ -20,6 +20,11 @@ namespace Songkick.Presentation.Phone.Home
         public TrackingControlViewModel TrackingControlViewModel { get; set; }
         public NearYouControlViewModel NearYouControlViewModel { get; set; }
         public FastActionsControlViewModel FastActionsControlViewModel { get; set; }
+        public ICommand NavigateToAccountCommand
+        {
+            get { return GetValue<ICommand>("NavigateToAccountCommand", null); }
+            set { SetValue("NavigateToAccountCommand", value); }
+        }
         
         public HomePanoramaViewModel()
             :base()
@@ -27,6 +32,7 @@ namespace Songkick.Presentation.Phone.Home
             TrackingControlViewModel = new TrackingControlViewModel();
             NearYouControlViewModel = new NearYouControlViewModel();
             FastActionsControlViewModel = new FastActionsControlViewModel();
+            NavigateToAccountCommand = new WGCommand(_=> this.Services().Navigation.NavigateToAccount());
         }
 
         public override void Charged()

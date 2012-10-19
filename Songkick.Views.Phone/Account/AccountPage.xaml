@@ -1,0 +1,47 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Songkick.Views.Phone.Account.AccountPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wgControls="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone"
+    xmlns:custom="clr-namespace:Phone7.Fx.Preview;assembly=Phone7.Fx.Preview"
+    xmlns:wgBehaviors="clr-namespace:WG.Views.Phone.Behaviors;assembly=WG.Views.Phone"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.Opacity="0">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <wgControls:TitleControl
+            TitleText="{Binding LocalizedResources.MyAccountTitle, Source={StaticResource LocalizedStrings}}"/>
+        <StackPanel Grid.Row="1" Margin="{StaticResource DefaultMargin}">
+            <TextBlock 
+                Text="{Binding LocalizedResources.AccountNameLabel, Source={StaticResource LocalizedStrings}}"
+                Margin="{StaticResource DefaultMargin}"/>
+            <TextBox 
+                Text="{Binding AccountName, Mode=TwoWay}">
+                <i:Interaction.Behaviors>
+                    <wgBehaviors:TextBoxBehavior/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+        </StackPanel>
+        
+        <custom:BindableApplicationBar Mode="Default" x:Name="AppBar" BarOpacity="1.0" IsVisible="{Binding IsBarVisible}" >
+            <custom:BindableApplicationBarIconButton 
+                Text="{Binding LocalizedResources.ValidateCaption, Source={StaticResource LocalizedStrings}}" IconUri="/Toolkit.Content/ApplicationBar.Check.png"
+                Command="{Binding SetAccountCommand}"/>
+        </custom:BindableApplicationBar>
+    </Grid>
+
+</phone:PhoneApplicationPage>

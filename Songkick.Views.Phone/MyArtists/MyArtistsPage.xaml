@@ -25,7 +25,8 @@
         </Grid.RowDefinitions>
         <Controls:TitleControl
             TitleText="{Binding LocalizedResources.MyArtistsTitle, Source={StaticResource LocalizedStrings}}"/>
-            <toolkit:LongListSelector
+            <Controls:WGLongListSelector
+                EndListCommand="{Binding EndListCommand}"
                 Margin="{StaticResource DoubleDefaultMargin}"
                 Grid.Row="1"
                 x:Name="ArtistsList"

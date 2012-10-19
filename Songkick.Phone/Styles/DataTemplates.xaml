@@ -49,7 +49,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Rectangle Margin="{StaticResource RightDefaultMargin}" HorizontalAlignment="Left" Height="70" Width="70" Fill="{StaticResource DarkGrayBrush}"/>
-                    <TextBlock 
+                <TextBlock 
                         Style="{StaticResource PhoneTextLargeStyle}" 
                         Text="{Binding DisplayName}" 
                         TextTrimming="WordEllipsis"
@@ -68,7 +68,31 @@
             <TextBlock Style="{StaticResource NormalJumpListTemplate}" Text="{Binding Key}"/>
         </Border>
     </DataTemplate>
-    
+
+    <DataTemplate x:Key="MetroAreasItemTemplate">
+        <wgcontrols:WGButton Command="{Binding DataContext.GoToEventCommand, ElementName=ArtistsList}"
+                             Margin="{StaticResource DefaultVerticalSpacing}" 
+                             HorizontalAlignment="Left"
+                             CommandParameter="{Binding EventEx}">
+            <Grid HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Margin="{StaticResource RightDefaultMargin}" HorizontalAlignment="Left" Height="70" Width="70" Fill="{StaticResource DarkGrayBrush}"/>
+                <StackPanel
+                    Grid.Column="1">
+                    <TextBlock 
+                        Style="{StaticResource SemiLargeTextBlockStyle}"
+                        Text="{Binding FullName}" 
+                        TextTrimming="WordEllipsis"/>
+                    <TextBlock
+                        Text="{Binding Country.DisplayName}"/>
+                </StackPanel>
+            </Grid>
+        </wgcontrols:WGButton>
+    </DataTemplate>
+
     <ItemsPanelTemplate x:Key="JumpListPanel">
         <toolkit:WrapPanel />
     </ItemsPanelTemplate>

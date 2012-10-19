@@ -20,6 +20,9 @@ namespace Songkick.Entities.Phone.General
         [JsonProperty("artist")]
         public Artist[] Artists { get; set; }
 
+        [JsonProperty("metroArea")]
+        public Zone[] MetroAreas { get; set; }
+
         [JsonProperty("page")]
         public int Page { get; set; }
 

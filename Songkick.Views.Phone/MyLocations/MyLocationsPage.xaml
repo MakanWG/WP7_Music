@@ -1,0 +1,33 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Songkick.Views.Phone.MyLocations.MyLocationsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="clr-namespace:WG.Views.Phone.Controls;assembly=WG.Views.Phone"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.Opacity="0">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Controls:TitleControl
+            TitleText="{Binding LocalizedResources.MyLocationsTitle, Source={StaticResource LocalizedStrings}}"/>
+        <Controls:WGList
+            EndListCommand="{Binding EndListCommand}"
+            Margin="{StaticResource DoubleDefaultMargin}"
+            Grid.Row="1"
+            x:Name="MetroAreasList"
+            ItemTemplate="{StaticResource MetroAreasItemTemplate}"
+            ItemsSource="{Binding TrackedLocations}"/>
+    </Grid>
+</phone:PhoneApplicationPage>

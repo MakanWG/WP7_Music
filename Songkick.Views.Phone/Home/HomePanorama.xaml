@@ -30,9 +30,10 @@
         </controls:Panorama>
         
         <custom:BindableApplicationBar Mode="Minimized" x:Name="AppBar" BarOpacity="1.0" IsVisible="{Binding IsBarVisible}" >
-            <custom:BindableApplicationBarIconButton Text="Add" IconUri="/images/appbar.add.rest.png" />
             <custom:BindableApplicationBar.MenuItems>
-                <custom:BindableApplicationBarMenuItem  Text="Settings" />
+                <custom:BindableApplicationBarMenuItem  
+                    Text="{Binding LocalizedResources.MyAccountCaption, Source={StaticResource LocalizedStrings}}"
+                    Command="{Binding NavigateToAccountCommand}"/>
             </custom:BindableApplicationBar.MenuItems>
         </custom:BindableApplicationBar>
     </Grid>

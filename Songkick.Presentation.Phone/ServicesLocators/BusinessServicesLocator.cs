@@ -50,5 +50,10 @@ namespace Songkick.Presentation.Phone.ServicesLocators
         {
             get { return _kernel.Get<ITrackingBusinessService>(); }
         }
+
+        public IAccountBusinessService Account
+        {
+            get { return _kernel.Get<IAccountBusinessService>(); }
+        }
     }
 }

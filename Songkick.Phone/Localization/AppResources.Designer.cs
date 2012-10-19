@@ -70,6 +70,15 @@ namespace Songkick.Phone.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account name.
+        /// </summary>
+        public static string AccountNameLabel {
+            get {
+                return ResourceManager.GetString("AccountNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to my artists.
         /// </summary>
         public static string ArtistsAction {
@@ -124,11 +133,38 @@ namespace Songkick.Phone.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to my account.
+        /// </summary>
+        public static string MyAccountCaption {
+            get {
+                return ResourceManager.GetString("MyAccountCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MY ACCOUNT.
+        /// </summary>
+        public static string MyAccountTitle {
+            get {
+                return ResourceManager.GetString("MyAccountTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MY ARTISTS.
         /// </summary>
         public static string MyArtistsTitle {
             get {
                 return ResourceManager.GetString("MyArtistsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MY LOCATIONS.
+        /// </summary>
+        public static string MyLocationsTitle {
+            get {
+                return ResourceManager.GetString("MyLocationsTitle", resourceCulture);
             }
         }
         
@@ -165,6 +201,15 @@ namespace Songkick.Phone.Localization {
         public static string TrackingPanoramaItem {
             get {
                 return ResourceManager.GetString("TrackingPanoramaItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string ValidateCaption {
+            get {
+                return ResourceManager.GetString("ValidateCaption", resourceCulture);
             }
         }
     }

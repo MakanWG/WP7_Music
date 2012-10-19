@@ -73,6 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\AccountPageViewModel.cs" />
     <Compile Include="ApplicationPages.cs" />
     <Compile Include="Calendar\CalendarPivotViewModel.cs" />
     <Compile Include="Calendar\UserControls\ArtistsUserControlViewModel.cs" />
@@ -86,10 +87,12 @@
     <Compile Include="MainPage\EmptyViewModel.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="MyArtists\MyArtistsPageViewModel.cs" />
+    <Compile Include="MyLocations\MyLocationsPageViewModel.cs" />
     <Compile Include="NavigationControllerExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesLocators\BusinessServicesLocator.cs" />
     <Compile Include="ServicesLocators\ClientServicesLocator.cs" />
+    <Compile Include="ServicesLocators\NotificationsControllerExtensions.cs" />
     <Compile Include="ServicesLocators\ServicesLocator.cs" />
     <Compile Include="ViewModelExtensions.cs" />
   </ItemGroup>

@@ -26,10 +26,17 @@ namespace Songkick.Presentation.Phone.Home.Controls
             set { SetValue<ICommand>("GoToMyArtistsCommand", value); }
         }
 
+        public ICommand GoToMyLocationsCommand
+        {
+            get { return GetValue<ICommand>("GoToMyLocationsCommand", null); }
+            set { SetValue<ICommand>("GoToMyLocationsCommand", value); }
+        }
+
         public FastActionsControlViewModel()
         {
             GoToCalendarCommand = new WGCommand(_ => this.Services().Navigation.NavigateToCalendar());
             GoToMyArtistsCommand = new WGCommand(_ => this.Services().Navigation.NavigateToMyArtists());
+            GoToMyLocationsCommand = new WGCommand(_ => this.Services().Navigation.NavigateToMyLocations());
         }
 
         public override void Charged()

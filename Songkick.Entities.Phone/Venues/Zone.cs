@@ -16,6 +16,12 @@ namespace Songkick.Entities.Phone.Venues
         [JsonProperty("id")]
         public long ZoneId { get; set; }
 
+        [JsonProperty("lat")]
+        public double? Latitude { get; set; }
+
+        [JsonProperty("lng")]
+        public double? Longitude { get; set; }
+
         [JsonProperty("state")]
         public State State { get; set; }
     }
