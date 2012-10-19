@@ -48,27 +48,27 @@ namespace Songkick.Presentation.Phone.MyArtists
                                                    Page++;
                                                    this.ExecuteAsync(__ =>
                                                        {
-                                                       this
-                                                       .BusinessServices()
-                                                       .Tracking
-                                                       .GetTrackedArtists("DavidMelo", Page)
-                                                       .Item2
-                                                       .ToList()
-                                                       .ForEach(element => 
-                                                            {
-                                                                if (TrackedArtists.Select(e => e.Key).Contains(element.Key))
-                                                                {
-                                                                    ReorganizeGroups(element);
-                                                                }
-                                                                else
-                                                                {
-                                                                    ExecuteOnDispatcher(() =>
-                                                                       TrackedArtists.Add(element));
-                                                                }      
-                                                            });
-                                                           this.ExecuteOnDispatcher(()=>
-                                                              this.Services().Notifications.ClearProgressIndicator());
-                                                            
+                                                            this
+                                                            .BusinessServices()
+                                                            .Tracking
+                                                            .GetTrackedArtists("DavidMelo", Page)
+                                                            .Item2
+                                                            .ToList()
+                                                            .ForEach(element => 
+                                                                 {
+                                                                     if (TrackedArtists.Select(e => e.Key).Contains(element.Key))
+                                                                     {
+                                                                         ReorganizeGroups(element);
+                                                                     }
+                                                                     else
+                                                                     {
+                                                                         ExecuteOnDispatcher(() =>
+                                                                            TrackedArtists.Add(element));
+                                                                     }      
+                                                                 });
+                                                            this.ExecuteOnDispatcher(()=>
+                                                                this.Services().Notifications.ClearProgressIndicator());
+                                                                 
                                                        });
                                                });
         }
@@ -76,8 +76,7 @@ namespace Songkick.Presentation.Phone.MyArtists
         private void ReorganizeGroups(WGGrouping<char,Artist> element )
         {
             var oldArtists = TrackedArtists.Where(e => e.Key == element.Key).SelectMany(g => g.ToList()).ToList();
-            var newArtists = element.ToList();
-            oldArtists.AddRange(newArtists);
+            oldArtists.AddRange(element.ToList());
             var group =
                 TrackedArtists.Single(
                     e => e.Key == element.Key);
